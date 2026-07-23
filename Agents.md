@@ -6,14 +6,37 @@
 - 所有项目代码、资源、配置和文档均保存在本仓库中。
 - 修改应围绕用户提出的需求进行，避免无关重构或大范围格式化。
 
-## 技术栈与命令
+## 技术栈
 
-- 框架：Next.js 16、React 19、TypeScript、Tailwind CSS 4、vinext。
-- 安装依赖：`npm ci`
+- 运行环境：Node.js `>=22.13.0`，使用 npm 和 `package-lock.json` 管理依赖。
+- 应用框架：Next.js `16.2.6`、React/React DOM `19.2.6`。
+- 开发语言：TypeScript `5.9.3`。
+- 样式系统：Tailwind CSS `4.2.1`，通过 PostCSS 集成。
+- 构建工具：Vite `8.0.13`、vinext `0.0.50`。
+- 代码质量：ESLint `9.39.4`、`eslint-config-next`。
+- 部署运行时：Cloudflare Workers，启用 `nodejs_compat`。
+- 数据能力：已包含 Drizzle ORM 和 D1/R2 接入结构，但当前未启用数据库或
+  对象存储。
+- 托管：OpenAI Sites；项目标识保存在 `.openai/hosting.json`。
+
+## 常用命令
+
+- 安装锁定版本的依赖：`npm ci`
 - 本地开发：`npm run dev`
+- 生产构建：`npm run build`
+- 启动构建产物：`npm run start`
 - 代码检查：`npm run lint`
-- 构建：`npm run build`
-- 测试：`npm test`
+- 构建并测试：`npm test`
+- 生成 Drizzle 迁移：`npm run db:generate`
+
+## 主要目录
+
+- `app/`：Next.js 页面、布局和全局样式。
+- `public/`：静态资源。
+- `worker/`：Cloudflare Worker 入口。
+- `db/`、`drizzle/`：数据库结构和迁移。
+- `tests/`：自动化测试。
+- `.openai/hosting.json`：Sites 项目及可选 D1/R2 逻辑绑定。
 
 ## 开发流程
 
