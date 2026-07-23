@@ -7,9 +7,10 @@
   },
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/sync-news.mjs",
     "build": "next build",
     "start": "npx serve out",
-    "test": "npm run build && node --test tests/static-export.test.mjs",
+    "test": "npm run build && node --check cloudflare/news-admin/src/index.js && node --check cloudflare/news-admin/public/admin.js && node --test tests/*.test.mjs",
     "lint": "eslint . --ignore-pattern .next --ignore-pattern out --ignore-pattern dist"
   },
   "dependencies": {

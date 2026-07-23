@@ -33,3 +33,16 @@ test("exports the homepage assets", async () => {
     access(new URL("contact-qr.jpg", outputRoot)),
   ]);
 });
+
+test("exports published news as static HTML", async () => {
+  const article = await readFile(
+    new URL(
+      "news/freyr-technology-ai-renews-nvidia-preferred-cloud-partner-status/index.html",
+      outputRoot
+    ),
+    "utf8"
+  );
+
+  assert.match(article, /Freyr Technology AI Renews NVIDIA Preferred Cloud Partner Status/);
+  assert.match(article, /Scalable compute for the next generation of AI/);
+});

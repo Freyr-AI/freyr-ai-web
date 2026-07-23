@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Freyr News Studio</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">F</span>
+        <div><strong>FREYR</strong><small>NEWS STUDIO</small></div>
+      </div>
+      <div class="session">
+        <span id="sessionUser">Checking access…</span>
+        <a href="/cdn-cgi/access/logout">Sign out</a>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <aside class="library">
+        <div class="library-head">
+          <div>
+            <p class="eyebrow">CONTENT</p>
+            <h1>News</h1>
+          </div>
+          <button class="icon-button" id="newArticle" type="button" aria-label="Create news">＋</button>
+        </div>
+        <label class="search">
+          <span>Search</span>
+          <input id="searchNews" type="search" placeholder="Title or slug">
+        </label>
+        <div class="news-list" id="newsList">
+          <p class="empty">Loading articles…</p>
+        </div>
+      </aside>
+
+      <section class="editor-shell">
+        <div class="editor-head">
+          <div>
+            <p class="eyebrow" id="editorState">NEW DRAFT</p>
+            <h2 id="editorHeading">Create news</h2>
+          </div>
+          <div class="actions">
+            <button class="button secondary" id="previewArticle" type="button">Preview</button>
+            <button class="button secondary danger" id="unpublishArticle" type="button" hidden>Unpublish</button>
+            <button class="button secondary" id="saveArticle" type="button">Save draft</button>
+            <button class="button primary" id="publishArticle" type="button">Publish</button>
+          </div>
+        </div>
+
+        <div class="notice" id="notice" role="status" aria-live="polite" hidden></div>
+
+        <form id="articleForm">
+          <div class="form-grid">
+            <label class="field field-wide">
+              <span>Title</span>
+              <input id="title" name="title" maxlength="240" required placeholder="News headline">
+            </label>
+            <label class="field">
+              <span>Slug</span>
+              <input id="slug" name="slug" maxlength="180" required placeholder="news-url-slug">
+            </label>
+            <label class="field">
+              <span>Category</span>
+              <input id="category" name="category" maxlength="80" value="NEWS">
+            </label>
+            <label class="field field-wide">
+              <span>Summary</span>
+              <textarea id="summary" name="summary" maxlength="1000" rows="3" placeholder="Short description for cards and search results"></textarea>
+            </label>
+            <label class="field field-wide">
+              <span>Cover image</span>
+              <div class="cover-row">
+                <input id="coverImageUrl" name="coverImageUrl" placeholder="https://…">
+                <label class="upload-button">
+                  Upload image
+                  <input id="coverUpload" type="file" accept="image/*">
+                </label>
+              </div>
+            </label>
+          </div>
+
+          <div class="content-field">
+            <div class="content-label">
+              <span>Article content</span>
+              <button id="toggleHtml" type="button">Edit HTML</button>
+            </div>
+            <div class="toolbar" id="toolbar" aria-label="Formatting tools">
+              <button type="button" data-command="bold"><strong>B</strong></button>
+              <button type="button" data-command="italic"><em>I</em></button>
+              <button type="button" data-command="formatBlock" data-value="h2">H2</button>
+              <button type="button" data-command="formatBlock" data-value="h3">H3</button>
+              <button type="button" data-command="insertUnorderedList">• List</button>
+              <button type="button" data-command="formatBlock" data-value="blockquote">Quote</button>
+              <button type="button" id="addLink">Link</button>
+              <button type="button" data-command="removeFormat">Clear</button>
+            </div>
+            <div
+              class="rich-editor"
+              id="richEditor"
+              contenteditable="true"
+              role="textbox"
+              aria-multiline="true"
+              data-placeholder="Write the article…"
+            ></div>
+            <textarea class="html-editor" id="htmlEditor" spellcheck="false" hidden></textarea>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <dialog id="previewDialog">
+      <div class="preview-head">
+        <strong>Article preview</strong>
+        <button id="closePreview" type="button" aria-label="Close preview">×</button>
+      </div>
+      <article class="preview-article">
+        <p class="preview-category" id="previewCategory"></p>
+        <h1 id="previewTitle"></h1>
+        <p class="preview-summary" id="previewSummary"></p>
+        <img id="previewCover" alt="" hidden>
+        <div class="preview-body" id="previewBody"></div>
+      </article>
+    </dialog>
+
+    <script src="/admin.js" defer></script>
+  </body>
+</html>
+

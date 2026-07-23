@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { formatNewsDate, newsItems } from "@/lib/news";
 
 const capabilities = [
   {
@@ -27,6 +28,8 @@ function Brand({ inverse = false }: { inverse?: boolean }) {
 }
 
 export default function Home() {
+  const latestNews = newsItems[0];
+
   return (
     <main id="top">
       <header className="siteHeader">
@@ -106,25 +109,26 @@ export default function Home() {
           <p className="kicker">OUR LATEST NEWS</p>
           <h2 id="news-title">Building the future of accelerated compute.</h2>
         </div>
-        <article className="newsFeature">
-          <div className="newsCopy">
-            <p className="newsDate">APRIL 15, 2026 · PARTNERSHIP</p>
-            <h3>Freyr Technology AI Renews NVIDIA Preferred Cloud Partner Status</h3>
-            <p>
-              Freyr Technology AI has renewed its NVIDIA Preferred Cloud Partner —
-              Compute competency status within the NVIDIA Partner Network.
-            </p>
-            <a className="textLink" href="#news">Show more <span>→</span></a>
-          </div>
-          <div className="newsVisual">
-            <Image
-              src="/news-partner-card.jpg"
-              width={830}
-              height={500}
-              alt="Scalable Compute. Instant Tokens."
+        {latestNews ? (
+          <article className="newsFeature">
+            <div className="newsCopy">
+              <p className="newsDate">
+                {formatNewsDate(latestNews.published_at).toUpperCase()} · {latestNews.category}
+              </p>
+              <h3>{latestNews.title}</h3>
+              <p>{latestNews.summary}</p>
+              <a className="textLink" href={`/news/${latestNews.slug}/`}>Show more <span>→</span></a>
+            </div>
+            <div
+              className="newsVisual"
+              role="img"
+              aria-label={latestNews.title}
+              style={{ backgroundImage: `url("${latestNews.cover_image_url}")` }}
             />
-          </div>
-        </article>
+          </article>
+        ) : (
+          <p className="newsEmpty">New stories are coming soon.</p>
+        )}
       </section>
 
       <footer id="about">

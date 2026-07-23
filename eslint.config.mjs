@@ -11,6 +11,7 @@ const eslintConfig = defineConfig([
     ".next/**",
     "out/**",
     "build/**",
+    "cloudflare/news-admin/**",
     "next-env.d.ts",
   ]),
 ]);
