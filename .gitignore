@@ -4,6 +4,10 @@
 /.vinext/
 /dist/
 /out/
+/_site/
+/.venv/
+__pycache__/
+*.pyc
 next-env.d.ts
 /.wrangler/
 **/.wrangler/
