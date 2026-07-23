@@ -31,8 +31,8 @@ img { max-width: 100%; }
   z-index: 10;
   display: grid;
   grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  min-height: 90px;
+  align-items: start;
+  min-height: 150px;
   padding: 0 5.2vw;
   background: #fff;
 }
@@ -45,27 +45,48 @@ img { max-width: 100%; }
   width: 210px;
   height: auto;
 }
+.siteHeader .brand {
+  margin-top: 38px;
+}
+.siteHeader .brand img { width: 240px; }
 .brandInverse img { filter: brightness(0) invert(1); }
 .siteHeader nav {
   display: flex;
-  align-items: stretch;
-  align-self: stretch;
+  align-items: flex-start;
+  align-self: start;
   gap: clamp(24px, 3vw, 58px);
+  min-height: 55px;
+  margin-top: 29px;
+  border-bottom: 1px solid #181818;
 }
-.siteHeader nav a {
+.siteHeader nav > a,
+.navBusiness > a {
   display: grid;
+  min-height: 55px;
   place-items: center;
   border-bottom: 2px solid transparent;
   color: #181818;
   font-size: 14px;
 }
-.siteHeader nav a:hover,
+.siteHeader nav > a:hover,
+.navBusiness > a:hover,
 .siteHeader nav .active { border-color: var(--ink); }
-.headerCta {
-  justify-self: end;
-  padding: 10px 18px;
-  border: 1px solid var(--ink);
-  border-radius: 999px;
+.navBusiness {
+  position: relative;
+  display: grid;
+}
+.businessSubnav {
+  position: absolute;
+  top: 68px;
+  left: 50%;
+  display: grid;
+  width: max-content;
+  gap: 12px;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.businessSubnav a {
+  color: #181818;
   font-size: 13px;
 }
 .menuToggle { display: none; }
@@ -73,15 +94,15 @@ img { max-width: 100%; }
 .hero {
   position: relative;
   display: grid;
-  min-height: min(760px, calc(100svh - 90px));
-  grid-template-columns: 66% 34%;
+  min-height: min(730px, calc(100svh - 150px));
+  grid-template-columns: 61% 39%;
   overflow: hidden;
   background: #fff;
 }
 .heroCopy {
   z-index: 2;
   align-self: center;
-  padding: 70px 5.4vw 92px;
+  padding: 54px 5.4vw 92px;
 }
 .partnerBadge {
   width: fit-content;
@@ -101,12 +122,12 @@ img { max-width: 100%; }
 }
 .hero h1 {
   display: flex;
-  max-width: 1120px;
+  max-width: 1040px;
   flex-direction: column;
   gap: clamp(24px, 4.4vh, 52px);
   margin: 0;
   color: #111;
-  font-size: clamp(44px, 4.15vw, 78px);
+  font-size: clamp(44px, 3.75vw, 72px);
   font-weight: 300;
   letter-spacing: -.06em;
   line-height: 1;
@@ -133,7 +154,7 @@ img { max-width: 100%; }
 .rackScene {
   position: absolute;
   z-index: 1;
-  inset: 12% 0 0 31%;
+  inset: 11% 0 0 40%;
   min-width: 0;
   background: url("./public/hero-servers-v2.png") right bottom / cover no-repeat;
   pointer-events: none;
@@ -510,9 +531,11 @@ footer {
 @media (max-width: 1000px) {
   .siteHeader {
     grid-template-columns: 1fr auto auto;
+    align-items: center;
     min-height: 72px;
     gap: 14px;
   }
+  .siteHeader .brand { margin-top: 0; }
   .menuToggle {
     display: grid;
     width: 42px;
@@ -543,21 +566,39 @@ footer {
     align-items: stretch;
     padding: 10px 5.2vw 20px;
     border-top: 1px solid var(--line);
+    border-bottom: 0;
+    margin-top: 0;
     background: #fff;
     box-shadow: 0 18px 30px rgba(9, 15, 56, .1);
   }
   .siteHeader nav.isOpen { display: grid; }
-  .siteHeader nav a {
+  .siteHeader nav > a,
+  .navBusiness > a {
     min-height: 44px;
     justify-content: start;
     border: 0;
+  }
+  .navBusiness { display: grid; }
+  .businessSubnav {
+    position: static;
+    width: auto;
+    gap: 0;
+    padding: 0 0 8px 18px;
+    transform: none;
+    text-align: left;
+  }
+  .businessSubnav a {
+    display: grid;
+    min-height: 38px;
+    align-items: center;
+    font-size: 13px;
   }
   .hero {
     min-height: 720px;
     grid-template-columns: 58% 42%;
   }
   .hero h1 { font-size: clamp(36px, 5.6vw, 58px); }
-  .rackScene { inset: 20% 0 0 32%; }
+  .rackScene { inset: 20% 0 0 40%; }
   .capabilities {
     padding-top: 150px;
     padding-bottom: 150px;
@@ -577,8 +618,7 @@ footer {
 
 @media (max-width: 720px) {
   .siteHeader { padding: 0 20px; }
-  .brand img { width: 165px; }
-  .headerCta { display: none; }
+  .siteHeader .brand img { width: 165px; }
   .hero {
     display: block;
     min-height: auto;
@@ -634,7 +674,18 @@ footer {
     font-size: 16px;
     line-height: 1.75;
   }
-  .map { margin: 0 -20px; }
+  .map {
+    margin: 0 -20px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .map::-webkit-scrollbar { display: none; }
+  .map img {
+    width: 760px;
+    max-width: none;
+  }
   .newsFeature { grid-template-columns: 1fr; }
   .newsFeatureSecondary { padding-top: 60px; }
   .newsFeatureSecondary:nth-child(even) .newsCopy,
