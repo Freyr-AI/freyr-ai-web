@@ -2,17 +2,17 @@ import Image from "next/image";
 
 const capabilities = [
   {
-    icon: "/icon-reference-architecture.jpg",
+    icon: "/icon-reference-architecture-transparent.png",
     title: "NVIDIA REFERENCE ARCHITECTURE",
     copy: "Built on proven NVIDIA reference architecture for performance and scale.",
   },
   {
-    icon: "/icon-reference-deployment.jpg",
+    icon: "/icon-reference-deployment-transparent.png",
     title: "FREYR REFERENCE DEPLOYMENT",
     copy: "Validated deployment model ensuring efficiency, reliability, and compliance.",
   },
   {
-    icon: "/icon-standard-platform.jpg",
+    icon: "/icon-standard-platform-transparent.png",
     title: "STANDARD AND PLATFORM",
     copy: "Standardized infrastructure and platform enabling interoperability and scalability.",
   },
