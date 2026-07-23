@@ -77,13 +77,25 @@ img { max-width: 100%; }
 }
 .businessSubnav {
   position: absolute;
-  top: 68px;
+  top: 55px;
   left: 50%;
   display: grid;
   width: max-content;
   gap: 12px;
-  transform: translateX(-50%);
+  padding-top: 13px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, -6px);
   text-align: center;
+  transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+}
+.navBusiness:hover .businessSubnav,
+.navBusiness:focus-within .businessSubnav {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
 }
 .businessSubnav a {
   color: #181818;
@@ -584,8 +596,12 @@ footer {
     width: auto;
     gap: 0;
     padding: 0 0 8px 18px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
     transform: none;
     text-align: left;
+    transition: none;
   }
   .businessSubnav a {
     display: grid;
