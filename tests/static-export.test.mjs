@@ -7,9 +7,12 @@ const outputRoot = new URL("../out/", import.meta.url);
 test("exports a deployable static homepage", async () => {
   const html = await readFile(new URL("index.html", outputRoot), "utf8");
 
-  assert.match(html, /<title>Freyr AI — Hello World<\/title>/i);
-  assert.match(html, /Hello, world\./);
-  assert.match(html, /The journey starts here/);
+  assert.match(html, /<title>Freyr AI — Accelerated AI Infrastructure<\/title>/i);
+  assert.match(html, /FULLY/);
+  assert.match(html, /CONNECTED/);
+  assert.match(html, /FreyrAI Locations/);
+  assert.match(html, /1536/);
+  assert.match(html, /NVIDIA REFERENCE ARCHITECTURE/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/i);
 });
 

@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Freyr AI — Hello World",
-  description: "Welcome to Freyr AI.",
+  title: "Freyr AI — Accelerated AI Infrastructure",
+  description:
+    "Freyr builds high-performance GPU infrastructure and token platforms for the next generation of AI.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
