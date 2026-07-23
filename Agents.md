@@ -6,6 +6,15 @@
 - 所有项目代码、资源、配置和文档均保存在本仓库中。
 - 修改应围绕用户提出的需求进行，避免无关重构或大范围格式化。
 
+## 技术栈与命令
+
+- 框架：Next.js 16、React 19、TypeScript、Tailwind CSS 4、vinext。
+- 安装依赖：`npm ci`
+- 本地开发：`npm run dev`
+- 代码检查：`npm run lint`
+- 构建：`npm run build`
+- 测试：`npm test`
+
 ## 开发流程
 
 1. 开始工作前检查当前分支、工作区状态和远程更新。
