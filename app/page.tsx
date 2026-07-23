@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const locations = [
   { name: "Canada", x: 17, y: 37 },
   { name: "Saudi Arabia", x: 51, y: 53 },
@@ -34,8 +36,7 @@ const capabilities = [
 function Brand({ inverse = false }: { inverse?: boolean }) {
   return (
     <a className={`brand ${inverse ? "brandInverse" : ""}`} href="#top" aria-label="Freyr home">
-      <span className="brandMark" aria-hidden="true">F</span>
-      <span>FREYR</span>
+      <Image src="/freyr-logo-reference.png" width={520} height={170} alt="Freyr" priority />
     </a>
   );
 }

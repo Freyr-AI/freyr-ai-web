@@ -21,5 +21,7 @@ test("exports the homepage assets", async () => {
   await Promise.all([
     access(new URL("_next/", outputRoot)),
     access(new URL("favicon.svg", outputRoot)),
+    access(new URL("hero-servers-v2.png", outputRoot)),
+    access(new URL("freyr-logo-reference.png", outputRoot)),
   ]);
 });
