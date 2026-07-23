@@ -72,14 +72,10 @@ export default function Home() {
       </section>
 
       <section className="capabilities section" id="business" aria-labelledby="capabilities-title">
-        <div className="sectionIntro">
-          <p className="kicker">OUR FOUNDATION</p>
-          <h2 id="capabilities-title">Infrastructure designed to perform.</h2>
-        </div>
+        <h2 className="srOnly" id="capabilities-title">Infrastructure designed to perform.</h2>
         <div className="capabilityGrid">
-          {capabilities.map((item, index) => (
+          {capabilities.map((item) => (
             <article className="capabilityCard" key={item.title}>
-              <span className="cardNumber">0{index + 1}</span>
               <div className="capabilityIcon" aria-hidden="true">
                 <Image src={item.icon} width={230} height={190} alt="" />
               </div>
