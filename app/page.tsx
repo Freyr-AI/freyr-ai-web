@@ -62,23 +62,17 @@ export default function Home() {
             <strong>NVIDIA</strong>
             <span>PREFERRED<br />PARTNER</span>
           </div>
-          <p className="kicker">AI INFRASTRUCTURE · GLOBAL SCALE</p>
-          <h1 id="hero-title">FULLY<br />CONNECTED.<br />BUILT FOR AI.</h1>
-          <p className="heroIntro">
-            High-performance GPU infrastructure engineered for the next generation
-            of intelligent products.
-          </p>
+          <h1 id="hero-title">
+            <span>TRANSFORM</span>
+            <span>POWER INTO INTELLIGENCE:</span>
+            <span>BUILD, FINANCE AND OPERATE</span>
+          </h1>
           <div className="heroActions">
             <a className="button buttonPrimary" href="#business">Why Freyr</a>
             <a className="button buttonGhost" href="#news">Read the blog</a>
           </div>
         </div>
-        <div className="rackScene" aria-label="High-performance data center infrastructure">
-          <div className="rack rackBack"><span /></div>
-          <div className="rack rackMid"><span /></div>
-          <div className="rack rackFront"><span /></div>
-          <div className="rackGlow" />
-        </div>
+        <div className="rackScene" role="img" aria-label="High-performance data center infrastructure" />
       </section>
 
       <section className="stats" aria-label="Infrastructure scale">

@@ -8,8 +8,9 @@ test("exports a deployable static homepage", async () => {
   const html = await readFile(new URL("index.html", outputRoot), "utf8");
 
   assert.match(html, /<title>Freyr AI — Accelerated AI Infrastructure<\/title>/i);
-  assert.match(html, /FULLY/);
-  assert.match(html, /CONNECTED/);
+  assert.match(html, /TRANSFORM/);
+  assert.match(html, /POWER INTO INTELLIGENCE/);
+  assert.match(html, /BUILD, FINANCE AND OPERATE/);
   assert.match(html, /FreyrAI Locations/);
   assert.match(html, /1536/);
   assert.match(html, /NVIDIA REFERENCE ARCHITECTURE/);
