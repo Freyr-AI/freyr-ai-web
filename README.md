@@ -13,6 +13,8 @@ static HTML before deployment.
 4. Commit the file to the public repository's `main` branch, directly or through
    a reviewed pull request.
 
+See [`NEWS_AUTHORING.md`](NEWS_AUTHORING.md) for the editor checklist.
+
 The `date` field must use `YYYY-MM-DD`. It controls the newest-first ordering;
 filesystem modification times are not used. GitHub Actions automatically
 generates:
