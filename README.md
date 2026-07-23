@@ -7,11 +7,15 @@ static HTML before deployment.
 
 ## Add a news article
 
-1. Copy `content/news/_template.md`.
-2. Rename the copy, for example `2026-07-23-new-platform.md`.
-3. Complete the front matter and write the article in Markdown.
-4. Commit the file to the public repository's `main` branch, directly or through
-   a reviewed pull request.
+1. Copy the complete `content/news/_template/` directory.
+2. Rename the copied directory, for example `new-platform`.
+3. Keep the article at `index.md` and put its cover and content images in that
+   same directory.
+4. Complete the front matter and write the article in Markdown. The `slug`
+   field controls the public article URL independently of the source directory
+   name.
+5. Commit the directory to the public repository's `main` branch, directly or
+   through a reviewed pull request.
 
 See [`NEWS_AUTHORING.md`](NEWS_AUTHORING.md) for the editor checklist.
 
@@ -21,17 +25,16 @@ generates:
 
 - `news/index.json` for the homepage.
 - `news/index.html` for the full archive.
-- `news/<slug>/index.html` for each article.
+- `news/<slug>/index.html` and its colocated images for each article.
 
 ## Local preview
 
 Opening `index.html` directly shows the built-in fallback news item. To preview
-generated Markdown news pages locally:
+generated Markdown news pages locally, use a Python environment that has the
+locked dependency from `requirements-news.txt` installed:
 
 ```bash
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements-news.txt
-.venv/bin/python scripts/build_news.py --output _site
+python3 scripts/build_news.py --output _site
 python3 -m http.server 8080 --directory _site
 ```
 
@@ -42,12 +45,9 @@ Then open `http://localhost:8080`.
 The public website is deployed through GitHub Pages from the separate public
 mirror repository:
 
-- Repository: `Freyr-AI/freyr-ai-web-public`
+- Repository: `Freyr-AI/freyr-web.github.io`
 - Deployment workflow: `.github/workflows/deploy-pages.yml`
-- Pages URL: `https://freyr-ai.github.io/freyr-ai-web-public/`
-
-The Freyr-AI organization currently redirects its GitHub Pages traffic to its
-configured Pages domain, `www.token-exchange-ai.com`.
+- Website: `https://newhome.token-exchange-ai.com/`
 
 GitHub Actions builds the static `_site/` artifact and deploys it with GitHub
 Pages. Python and the Markdown package are build-time tools only; the published

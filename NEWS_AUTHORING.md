@@ -1,17 +1,26 @@
 # Add a Freyr AI news article
 
-1. Open [`content/news/_template.md`](content/news/_template.md).
-2. Choose **Copy raw file**, create a new file in the same folder, and use a
-   descriptive filename such as `2026-07-23-new-platform.md`.
-3. Complete every front matter field:
+1. Copy the complete [`content/news/_template/`](content/news/_template/)
+   directory.
+2. Rename the copied directory with a short descriptive name, such as
+   `new-platform`. The directory name is only for source organization; it does
+   not determine the public page URL.
+3. Keep the article Markdown at `index.md` inside that directory.
+4. Put the cover and every image used by the article in the same directory as
+   `index.md`. Use simple image filenames containing letters, numbers, dots,
+   hyphens, or underscores.
+5. Complete every front matter field:
    - `title`: article headline.
    - `slug`: unique lowercase URL using letters, numbers, and hyphens.
    - `date`: publication date in `YYYY-MM-DD` format.
    - `category`: short uppercase category.
    - `summary`: homepage and archive description.
-   - `cover`: an existing image path beginning with `./public/`.
-4. Write the article below the second `---` using Markdown.
-5. Commit directly to `main` if authorized, or open a pull request for review.
+   - `cover`: the cover image filename from the same directory, for example
+     `cover.jpg`. It is an image path, not the article URL.
+6. Write the article below the second `---` using Markdown. Reference local
+   images with a same-directory path such as
+   `![Architecture](./architecture.png)`.
+7. Commit directly to `main` if authorized, or open a pull request for review.
 
 GitHub Actions validates the content, orders all articles by `date` from newest
 to oldest, generates the static HTML and JSON files, and deploys GitHub Pages.
@@ -19,4 +28,6 @@ Open the workflow run after committing and confirm that all build and deploy
 steps succeed.
 
 Raw HTML is rendered as text. Use Markdown links and images rather than embedded
-HTML or scripts.
+HTML or scripts. During the build, images are copied beside the generated
+`news/<slug>/index.html`; the `slug` field alone controls the public article
+path.
