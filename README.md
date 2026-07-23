@@ -16,7 +16,17 @@ Then open `http://localhost:8080`.
 
 ## Deployment
 
-Publish the repository root as a static site:
+The public website is deployed through GitHub Pages from the separate public
+mirror repository:
+
+- Repository: `Freyr-AI/freyr-ai-web-public`
+- Branch and directory: `main` / repository root
+- Pages URL: `https://freyr-ai.github.io/freyr-ai-web-public/`
+
+The Freyr-AI organization currently redirects its GitHub Pages traffic to its
+configured Pages domain, `www.token-exchange-ai.com`.
+
+Deployment settings:
 
 - Build command: none
 - Build output directory: `.`
