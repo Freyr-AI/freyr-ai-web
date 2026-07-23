@@ -38,8 +38,7 @@ a { color: inherit; text-decoration: none; }
   height: auto;
 }
 .brandInverse img {
-  filter: invert(1);
-  mix-blend-mode: screen;
+  filter: brightness(0) invert(1);
 }
 .siteHeader nav {
   display: flex;
@@ -80,7 +79,7 @@ a { color: inherit; text-decoration: none; }
   width: fit-content;
   margin-bottom: 32px;
 }
-.partnerBadge img { display: block; width: 132px; height: auto; }
+.partnerBadge img { display: block; width: 150px; height: auto; }
 .kicker {
   margin: 0 0 16px;
   color: #595b7b;

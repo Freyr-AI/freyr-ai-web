@@ -21,7 +21,7 @@ const capabilities = [
 function Brand({ inverse = false }: { inverse?: boolean }) {
   return (
     <a className={`brand ${inverse ? "brandInverse" : ""}`} href="#top" aria-label="Freyr home">
-      <Image src="/freyr-logo-reference.png" width={520} height={170} alt="Freyr" priority />
+      <Image src="/freyr-logo-transparent.png" width={520} height={170} alt="Freyr" priority />
     </a>
   );
 }
@@ -46,9 +46,9 @@ export default function Home() {
         <div className="heroCopy">
           <div className="partnerBadge">
             <Image
-              src="/nvidia-preferred-partner.jpg"
-              width={260}
-              height={150}
+              src="/nvidia-preferred-partner-v2.jpg"
+              width={220}
+              height={100}
               alt="NVIDIA Preferred Partner"
             />
           </div>
@@ -152,9 +152,9 @@ export default function Home() {
         <div className="footerPartner" id="investors">
           <Image
             className="footerPartnerBadge"
-            src="/nvidia-preferred-partner.jpg"
-            width={260}
-            height={150}
+            src="/nvidia-preferred-partner-footer.jpg"
+            width={380}
+            height={160}
             alt="NVIDIA Preferred Partner"
           />
           <Image
