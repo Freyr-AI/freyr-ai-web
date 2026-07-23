@@ -1,33 +1,18 @@
 import Image from "next/image";
 
-const locations = [
-  { name: "Canada", x: 17, y: 37 },
-  { name: "Saudi Arabia", x: 51, y: 53 },
-  { name: "Oman", x: 57, y: 48 },
-  { name: "UAE", x: 57, y: 55 },
-  { name: "Malaysia", x: 70, y: 61 },
-  { name: "Thailand", x: 72, y: 53 },
-  { name: "Singapore", x: 73, y: 64 },
-  { name: "Indonesia", x: 78, y: 68 },
-  { name: "Taiwan", x: 78, y: 45 },
-  { name: "South Korea", x: 80, y: 36 },
-  { name: "Japan", x: 85, y: 32 },
-  { name: "Australia", x: 84, y: 82 },
-];
-
 const capabilities = [
   {
-    icon: "↗",
+    icon: "/icon-reference-architecture.jpg",
     title: "NVIDIA REFERENCE ARCHITECTURE",
     copy: "Built on proven NVIDIA reference architecture for performance and scale.",
   },
   {
-    icon: "◇",
+    icon: "/icon-reference-deployment.jpg",
     title: "FREYR REFERENCE DEPLOYMENT",
     copy: "Validated deployment model ensuring efficiency, reliability, and compliance.",
   },
   {
-    icon: "☁",
+    icon: "/icon-standard-platform.jpg",
     title: "STANDARD AND PLATFORM",
     copy: "Standardized infrastructure and platform enabling interoperability and scalability.",
   },
@@ -60,8 +45,12 @@ export default function Home() {
       <section className="hero" aria-labelledby="hero-title">
         <div className="heroCopy">
           <div className="partnerBadge">
-            <strong>NVIDIA</strong>
-            <span>PREFERRED<br />PARTNER</span>
+            <Image
+              src="/nvidia-preferred-partner.jpg"
+              width={260}
+              height={150}
+              alt="NVIDIA Preferred Partner"
+            />
           </div>
           <h1 id="hero-title">
             <span>TRANSFORM</span>
@@ -91,7 +80,9 @@ export default function Home() {
           {capabilities.map((item, index) => (
             <article className="capabilityCard" key={item.title}>
               <span className="cardNumber">0{index + 1}</span>
-              <span className="capabilityIcon" aria-hidden="true">{item.icon}</span>
+              <div className="capabilityIcon" aria-hidden="true">
+                <Image src={item.icon} width={230} height={190} alt="" />
+              </div>
               <h3>{item.title}</h3>
               <p>{item.copy}</p>
             </article>
@@ -104,24 +95,13 @@ export default function Home() {
           <p className="kicker">GLOBAL PRESENCE</p>
           <h2 id="locations-title">FreyrAI Locations</h2>
         </div>
-        <div className="map" role="img" aria-label="Freyr AI locations across North America, the Middle East, Asia, and Australia">
-          <div className="worldShape" aria-hidden="true">
-            <span className="continent northAmerica" />
-            <span className="continent southAmerica" />
-            <span className="continent europe" />
-            <span className="continent africa" />
-            <span className="continent asia" />
-            <span className="continent australia" />
-          </div>
-          {locations.map((location) => (
-            <span
-              className="mapPoint"
-              key={location.name}
-              style={{ left: `${location.x}%`, top: `${location.y}%` }}
-            >
-              <i />{location.name}
-            </span>
-          ))}
+        <div className="map">
+          <Image
+            src="/map-locations.jpg"
+            width={1600}
+            height={900}
+            alt="Freyr AI locations across North America, the Middle East, Asia, and Australia"
+          />
         </div>
       </section>
 
@@ -141,10 +121,12 @@ export default function Home() {
             <a className="textLink" href="#news">Show more <span>→</span></a>
           </div>
           <div className="newsVisual">
-            <Brand inverse />
-            <strong>Scalable Compute.<br />Instant Tokens.</strong>
-            <div className="circuit" aria-hidden="true" />
-            <span className="preferred">NVIDIA · PREFERRED PARTNER</span>
+            <Image
+              src="/news-partner-card.jpg"
+              width={830}
+              height={500}
+              alt="Scalable Compute. Instant Tokens."
+            />
           </div>
         </article>
       </section>
@@ -168,7 +150,20 @@ export default function Home() {
           <a href="#about">Careers</a>
         </div>
         <div className="footerPartner" id="investors">
-          <div><strong>NVIDIA</strong><span>PREFERRED<br />PARTNER</span></div>
+          <Image
+            className="footerPartnerBadge"
+            src="/nvidia-preferred-partner.jpg"
+            width={260}
+            height={150}
+            alt="NVIDIA Preferred Partner"
+          />
+          <Image
+            className="footerQr"
+            src="/contact-qr.jpg"
+            width={400}
+            height={400}
+            alt="Freyr contact QR code"
+          />
           <p>Powering dependable, scalable AI infrastructure worldwide.</p>
         </div>
       </footer>

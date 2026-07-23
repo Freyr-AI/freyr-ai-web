@@ -23,5 +23,12 @@ test("exports the homepage assets", async () => {
     access(new URL("favicon.svg", outputRoot)),
     access(new URL("hero-servers-v2.png", outputRoot)),
     access(new URL("freyr-logo-reference.png", outputRoot)),
+    access(new URL("map-locations.jpg", outputRoot)),
+    access(new URL("icon-reference-architecture.jpg", outputRoot)),
+    access(new URL("icon-reference-deployment.jpg", outputRoot)),
+    access(new URL("icon-standard-platform.jpg", outputRoot)),
+    access(new URL("news-partner-card.jpg", outputRoot)),
+    access(new URL("nvidia-preferred-partner.jpg", outputRoot)),
+    access(new URL("contact-qr.jpg", outputRoot)),
   ]);
 });

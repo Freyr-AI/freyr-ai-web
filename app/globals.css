@@ -77,16 +77,10 @@ a { color: inherit; text-decoration: none; }
   padding: 70px 5.4vw 92px;
 }
 .partnerBadge {
-  display: flex;
-  align-items: center;
   width: fit-content;
   margin-bottom: 32px;
-  border: 1px solid #aaa;
-  color: #111;
-  font-size: 10px;
 }
-.partnerBadge strong { padding: 12px 14px; border-right: 1px solid #aaa; }
-.partnerBadge span { padding: 9px 12px; line-height: 1.25; }
+.partnerBadge img { display: block; width: 132px; height: auto; }
 .kicker {
   margin: 0 0 16px;
   color: #595b7b;
@@ -164,7 +158,18 @@ a { color: inherit; text-decoration: none; }
 .capabilityCard:first-child { box-shadow: 0 18px 34px rgba(14, 15, 38, .18); }
 .capabilityCard:hover { transform: translateY(-7px); box-shadow: 0 22px 42px rgba(14, 15, 38, .16); }
 .cardNumber { position: absolute; right: 28px; top: 24px; color: #a5a6b8; font-size: 12px; letter-spacing: .18em; }
-.capabilityIcon { display: block; min-height: 92px; font-size: 74px; font-weight: 200; line-height: 1; }
+.capabilityIcon {
+  display: flex;
+  height: 92px;
+  align-items: center;
+  justify-content: center;
+}
+.capabilityIcon img {
+  width: 112px;
+  height: 92px;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+}
 .capabilityCard h3 {
   max-width: 310px;
   margin: 18px 0 28px;
@@ -177,40 +182,11 @@ a { color: inherit; text-decoration: none; }
 
 .locations { padding-top: 70px; }
 .map {
-  position: relative;
   max-width: 1500px;
-  height: min(44vw, 660px);
-  min-height: 420px;
   margin: 0 auto;
   overflow: hidden;
 }
-.worldShape { position: absolute; inset: 4% 3% 8%; filter: drop-shadow(10px 18px 12px rgba(93, 145, 178, .3)); }
-.continent { position: absolute; display: block; background: linear-gradient(145deg, #fff, #dceaf4); }
-.northAmerica { left: 7%; top: 17%; width: 29%; height: 33%; border-radius: 58% 35% 55% 42%; clip-path: polygon(2% 13%, 25% 0, 55% 9%, 73% 27%, 100% 34%, 82% 62%, 64% 55%, 47% 99%, 30% 79%, 18% 48%); }
-.southAmerica { left: 29%; top: 49%; width: 13%; height: 39%; border-radius: 30% 60% 80% 40%; clip-path: polygon(0 0, 100% 13%, 73% 55%, 42% 100%, 29% 51%); }
-.europe { left: 46%; top: 24%; width: 18%; height: 18%; border-radius: 60% 50% 40% 55%; clip-path: polygon(0 25%, 32% 0, 52% 25%, 100% 11%, 82% 100%, 32% 78%); }
-.africa { left: 47%; top: 39%; width: 18%; height: 39%; border-radius: 50% 55% 65% 50%; clip-path: polygon(0 6%, 74% 0, 100% 33%, 56% 100%, 25% 79%); }
-.asia { left: 58%; top: 19%; width: 35%; height: 42%; border-radius: 48% 44% 52% 38%; clip-path: polygon(0 20%, 28% 0, 63% 11%, 100% 28%, 80% 59%, 60% 55%, 52% 100%, 33% 67%, 8% 73%); }
-.australia { left: 78%; top: 67%; width: 14%; height: 17%; border-radius: 55% 44% 61% 45%; transform: rotate(-7deg); }
-.mapPoint {
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  color: #1f2053;
-  font-size: clamp(9px, .85vw, 13px);
-  font-weight: 700;
-  white-space: nowrap;
-}
-.mapPoint i {
-  width: 9px;
-  height: 9px;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  background: var(--ink);
-  box-shadow: 0 0 0 1px var(--ink);
-}
+.map img { display: block; width: 100%; height: auto; }
 
 .news { padding-top: 70px; padding-bottom: 150px; }
 .newsFeature { display: grid; grid-template-columns: 1fr 1fr; gap: 6vw; align-items: stretch; }
@@ -221,28 +197,10 @@ a { color: inherit; text-decoration: none; }
 .textLink { display: inline-flex; gap: 35px; align-items: center; margin-top: 50px; padding-bottom: 8px; border-bottom: 1px solid var(--ink); font-size: 16px; }
 .textLink span { font-size: 25px; }
 .newsVisual {
-  position: relative;
-  min-height: 390px;
   overflow: hidden;
-  padding: 42px;
   border-radius: 22px;
-  background: radial-gradient(circle at 82% 34%, #083baf, transparent 30%), linear-gradient(145deg, #071239, #020822);
-  color: #fff;
 }
-.newsVisual .brand img { width: 150px; }
-.newsVisual > strong { position: absolute; z-index: 2; left: 42px; top: 42%; font-size: clamp(25px, 2.6vw, 44px); line-height: 1.25; }
-.circuit {
-  position: absolute;
-  inset: -15% -10% auto auto;
-  width: 70%;
-  height: 85%;
-  opacity: .75;
-  background:
-    repeating-linear-gradient(45deg, transparent 0 18px, rgba(50, 135, 255, .7) 19px 21px, transparent 22px 34px),
-    repeating-linear-gradient(-25deg, transparent 0 29px, rgba(0, 212, 255, .45) 30px 32px);
-  transform: skew(-12deg);
-}
-.preferred { position: absolute; right: 30px; bottom: 28px; padding: 10px 12px; border: 1px solid rgba(255,255,255,.6); font-size: 10px; letter-spacing: .1em; }
+.newsVisual img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
 footer {
   display: grid;
@@ -258,9 +216,9 @@ footer {
 .footerColumn { display: flex; flex-direction: column; gap: 15px; }
 .footerColumn h3 { margin: 0 0 7px; font-size: 20px; }
 .footerColumn a { color: #e5e5ed; font-size: 14px; }
-.footerPartner > div { display: flex; align-items: center; width: fit-content; border: 1px solid #a6a8bc; }
-.footerPartner strong { padding: 18px; border-right: 1px solid #a6a8bc; }
-.footerPartner span { padding: 12px 18px; font-size: 11px; line-height: 1.35; }
+.footerPartner { display: grid; justify-items: start; gap: 14px; }
+.footerPartnerBadge { width: 180px; height: auto; }
+.footerQr { width: 180px; height: 180px; object-fit: cover; }
 .footerPartner p { max-width: 260px; color: #c6c7d7; font-size: 13px; line-height: 1.6; }
 
 @media (max-width: 1000px) {
@@ -293,12 +251,9 @@ footer {
   .section { padding: 80px 20px; }
   .capabilityGrid { grid-template-columns: 1fr; }
   .capabilityCard { min-height: 340px; }
-  .map { height: 430px; min-height: 0; margin: 0 -20px; }
-  .worldShape { transform: scale(1.35); }
-  .mapPoint { font-size: 8px; }
-  .mapPoint:nth-of-type(n+8) { display: none; }
+  .map { margin: 0 -20px; }
   .newsFeature { grid-template-columns: 1fr; }
-  .newsVisual { min-height: 330px; }
+  .newsVisual { min-height: 0; }
   footer { grid-template-columns: 1fr 1fr; gap: 50px 30px; padding: 65px 22px; }
   .footerLead { grid-column: 1 / -1; }
 }
