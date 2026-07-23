@@ -1,10 +1,6 @@
 name: Build and deploy GitHub Pages
 
-on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+on: [push, workflow_dispatch]
 
 permissions:
   contents: read
