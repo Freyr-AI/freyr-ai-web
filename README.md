@@ -1,28 +1,22 @@
 # Freyr AI Web
 
-Freyr AI company website built with Next.js, React, TypeScript, and npm.
+Freyr AI company website built with plain HTML, CSS, and JavaScript. It has no
+framework, package manager, build step, or backend.
 
-## Local development
+## Local preview
 
-```bash
-npm ci
-npm run dev
-```
-
-Open `http://localhost:3000`.
-
-## Validation
+Open `index.html` directly in a browser, or serve the repository root with any
+static file server:
 
 ```bash
-npm run lint
-npm test
+python3 -m http.server 8080
 ```
 
-`npm run build` generates a fully static site in `out/`.
+Then open `http://localhost:8080`.
 
 ## Deployment
 
-Cloudflare Pages is connected to the `main` branch and deploys automatically.
+Publish the repository root as a static site:
 
-- Build command: `npm run build`
-- Build output directory: `out`
+- Build command: none
+- Build output directory: `.`
