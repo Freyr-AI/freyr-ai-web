@@ -13,7 +13,10 @@ Write the news article in Markdown.
 
 - Use lists where helpful.
 - Add links with `[link text](https://example.com)`.
-- Put each image in this folder and add it with `![description](./example.jpg)`.
+- Put each image in this folder.
+- Choose its rendered size with `#small`, `#medium`, or `#full`:
+  `![description](./example.jpg#medium)`.
+- Images without a size marker use `#full`.
 
 ## Second section heading
 

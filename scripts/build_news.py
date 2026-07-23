@@ -25,6 +25,11 @@ SLUG_PATTERN = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 ALLOWED_SCHEMES = {"", "http", "https", "mailto"}
 ALLOWED_IMAGE_SCHEMES = {""}
 IMAGE_EXTENSIONS = {".avif", ".gif", ".jpeg", ".jpg", ".png", ".svg", ".webp"}
+IMAGE_SIZE_CLASSES = {
+    "small": "articleImage articleImageSmall",
+    "medium": "articleImage articleImageMedium",
+    "full": "articleImage articleImageFull",
+}
 ASSET_FILENAME_PATTERN = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]*$")
 ALLOWED_TAGS = {
     "a",
@@ -98,6 +103,17 @@ class SafeMarkup(HTMLParser):
         if tag not in ALLOWED_TAGS:
             return
 
+        image_src: str | None = None
+        image_class: str | None = None
+        if tag == "img":
+            source = next((value for name, value in attrs if name == "src"), None)
+            if source is None:
+                raise ValueError("Markdown image is missing its source")
+            image_src, image_class = normalize_local_image(
+                self.source_directory,
+                source,
+            )
+
         safe_attrs: list[str] = []
         for name, value in attrs:
             if value is None:
@@ -108,15 +124,13 @@ class SafeMarkup(HTMLParser):
                 safe_attrs.append(f'{name}="{html.escape(value, quote=True)}"')
             elif tag == "img" and name in {"src", "alt", "title"}:
                 if name == "src":
-                    parsed = urlparse(value)
-                    if parsed.scheme.lower() not in ALLOWED_IMAGE_SCHEMES:
-                        raise ValueError(f"Unsupported image URL: {value}")
-                    if not parsed.scheme:
-                        value = normalize_local_image(self.source_directory, value)
+                    value = image_src or ""
                 safe_attrs.append(f'{name}="{html.escape(value, quote=True)}"')
             elif tag == "code" and name == "class" and value.startswith("language-"):
                 safe_attrs.append(f'class="{html.escape(value, quote=True)}"')
 
+        if image_class:
+            safe_attrs.append(f'class="{image_class}"')
         suffix = f" {' '.join(safe_attrs)}" if safe_attrs else ""
         self.parts.append(f"<{tag}{suffix}>")
 
@@ -186,9 +200,32 @@ def normalize_asset_filename(source_directory: Path, value: str, label: str) -> 
     return filename
 
 
-def normalize_local_image(source_directory: Path, value: str) -> str:
-    filename = normalize_asset_filename(source_directory, value, "Markdown")
-    return f"./{filename}"
+def normalize_local_image(source_directory: Path, value: str) -> tuple[str, str]:
+    parsed = urlparse(value)
+    if (
+        parsed.scheme.lower() not in ALLOWED_IMAGE_SCHEMES
+        or parsed.netloc
+        or parsed.query
+    ):
+        raise ValueError(
+            f"{source_directory / 'index.md'}: Markdown images must come from "
+            "the same news folder"
+        )
+
+    size = parsed.fragment.lower() or "full"
+    if size not in IMAGE_SIZE_CLASSES:
+        sizes = ", ".join(f"#{name}" for name in IMAGE_SIZE_CLASSES)
+        raise ValueError(
+            f"{source_directory / 'index.md'}: unsupported image size "
+            f"#{parsed.fragment}; use {sizes}"
+        )
+
+    filename = normalize_asset_filename(
+        source_directory,
+        parsed.path,
+        "Markdown",
+    )
+    return f"./{filename}", IMAGE_SIZE_CLASSES[size]
 
 
 def clean_markdown(body: str, source_directory: Path) -> str:

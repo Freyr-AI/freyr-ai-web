@@ -13,7 +13,8 @@ static HTML before deployment.
    same directory.
 4. Complete the front matter and write the article in Markdown. The `slug`
    field controls the public article URL independently of the source directory
-   name.
+   name. Append `#small`, `#medium`, or `#full` to a Markdown image path to
+   choose a forced responsive width.
 5. Commit the directory to the public repository's `main` branch, directly or
    through a reviewed pull request.
 

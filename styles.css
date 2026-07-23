@@ -381,10 +381,16 @@ img { max-width: 100%; }
   font: 700 26px/1.25 Arial, sans-serif;
 }
 .articleBody img {
+  display: block;
   max-width: 100%;
   height: auto;
+  margin: 2em auto;
   border-radius: 14px;
+  object-fit: contain;
 }
+.articleBody .articleImageSmall { width: 400px; }
+.articleBody .articleImageMedium { width: 680px; }
+.articleBody .articleImageFull { width: 100%; }
 .articleBody a {
   text-decoration: underline;
   text-underline-offset: 3px;

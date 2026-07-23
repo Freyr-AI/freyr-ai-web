@@ -18,8 +18,11 @@
    - `cover`: the cover image filename from the same directory, for example
      `cover.jpg`. It is an image path, not the article URL.
 6. Write the article below the second `---` using Markdown. Reference local
-   images with a same-directory path such as
-   `![Architecture](./architecture.png)`.
+   images with a same-directory path and one of the supported size markers:
+   - `![Architecture](./architecture.png#small)` renders at `400px`.
+   - `![Architecture](./architecture.png#medium)` renders at `680px`.
+   - `![Architecture](./architecture.png#full)` fills the article width.
+   - Omitting the marker defaults to `#full`.
 7. Commit directly to `main` if authorized, or open a pull request for review.
 
 GitHub Actions validates the content, orders all articles by `date` from newest
@@ -30,4 +33,6 @@ steps succeed.
 Raw HTML is rendered as text. Use Markdown links and images rather than embedded
 HTML or scripts. During the build, images are copied beside the generated
 `news/<slug>/index.html`; the `slug` field alone controls the public article
-path.
+path. The selected width is enforced even when the source image is smaller.
+Every size remains limited to the available screen width for mobile
+compatibility.
