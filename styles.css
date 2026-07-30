@@ -753,6 +753,8 @@ img { display: block; max-width: 100%; }
   }
   .presence img { width: min(88%, 1360px); }
   .homeNews { padding-top: 20px; }
+  .businessIntro,
+  .businessGallery { width: min(69.27vw, 1330px); }
 }
 
 @media (min-width: 821px) and (max-width: 1180px) {
