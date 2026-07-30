@@ -545,172 +545,227 @@ img { display: block; max-width: 100%; }
 .footerPartnerBadge { width: 345px; height: auto; }
 .footerQr { width: 345px; height: auto; object-fit: contain; }
 
-@media (min-width: 821px) and (max-width: 1600px) {
-  :root { --page: min(100% - 5.42vw, 1330px); }
+@media (min-width: 821px) and (max-width: 2200px) {
+  :root { --page: min(100% - 4.88vw, 1197px); }
   .siteHeader {
-    min-height: clamp(80px, 7.8125vw, 125px);
-    padding-inline: 5.2vw;
+    min-height: clamp(74px, 7.03vw, 135px);
+    padding-inline: 4.68vw;
   }
-  .brand { margin-top: clamp(22px, 2.24vw, 36px); }
-  .brand img { width: clamp(130px, 13.02vw, 208px); }
+  .brand { margin-top: clamp(20px, 2.02vw, 39px); }
+  .brand img { width: clamp(120px, 11.72vw, 225px); }
   .siteHeader nav {
-    min-height: clamp(48px, 3.54vw, 57px);
-    gap: clamp(22px, 3vw, 48px);
-    margin-top: clamp(20px, 1.72vw, 28px);
+    min-height: clamp(44px, 3.19vw, 61px);
+    gap: clamp(20px, 2.7vw, 52px);
+    margin-top: clamp(18px, 1.55vw, 30px);
   }
   .siteHeader nav > a,
   .businessToggle {
-    min-height: clamp(48px, 3.54vw, 57px);
-    font-size: clamp(13px, .833vw, 15px);
+    min-height: clamp(44px, 3.19vw, 61px);
+    font-size: clamp(12px, .75vw, 14px);
   }
-  .businessSubnav { min-width: clamp(150px, 9.9vw, 180px); }
-  .businessSubnav a { padding: .57vw 1.15vw; font-size: clamp(13px, .78vw, 15px); }
-  .homeHero { min-height: 34.84vw; }
+  .businessSubnav { min-width: clamp(145px, 8.91vw, 190px); }
+  .businessSubnav a { padding: .51vw 1.04vw; font-size: clamp(12px, .7vw, 14px); }
+  .homeHero { min-height: 31.36vw; }
   .homeHeroCopy {
-    width: calc(100% - 5.42vw);
-    padding-top: 2.97vw;
+    width: calc(100% - 4.88vw);
+    padding-top: 2.67vw;
   }
   .heroPartner {
-    width: 8.65vw;
-    margin-bottom: 2.08vw;
+    width: 7.79vw;
+    margin-bottom: 1.87vw;
   }
-  .homeHero h1 { gap: 1.56vw; }
+  .homeHero h1 {
+    gap: 1.4vw;
+    font-size: clamp(31px, 3.375vw, 65px);
+  }
   .pillButton {
-    min-width: 9.22vw;
-    min-height: 2.66vw;
-    margin-top: 2.34vw;
-    font-size: clamp(13px, .885vw, 16px);
+    min-width: 8.3vw;
+    min-height: 2.39vw;
+    margin-top: 2.11vw;
+    font-size: clamp(12px, .8vw, 15px);
   }
   .stats {
-    min-height: 14.58vw;
-    padding-block: 2.08vw;
+    min-height: 13.12vw;
+    padding-block: 1.87vw;
   }
-  .stats div { gap: .625vw; }
+  .stats div { gap: .56vw; }
+  .stats strong { font-size: clamp(62px, 4.5vw, 86px); }
+  .stats span { font-size: clamp(16px, 1.215vw, 23px); }
   .capabilities {
-    padding-top: 9.74vw;
-    padding-bottom: 10.31vw;
+    padding-top: 8.77vw;
+    padding-bottom: 9.28vw;
   }
-  .capabilityGrid { gap: 5.2vw; }
+  .capabilityGrid { max-width: 1260px; gap: 4.68vw; }
   .capabilityCard {
-    min-height: max(360px, 31.93vw);
-    padding: 5.42vw 2.24vw 2.71vw;
-    border-radius: .78vw;
+    min-height: max(340px, 28.74vw);
+    padding: 4.88vw 2.02vw 2.44vw;
+    border-radius: .7vw;
   }
   .capabilityCard > img {
-    top: -4.06vw;
-    width: 9.64vw;
-    height: 8.02vw;
+    top: -3.65vw;
+    width: 8.68vw;
+    height: 7.22vw;
   }
-  .capabilityCard h2 { padding-bottom: 1.98vw; }
-  .capabilityCard p { margin-top: 3.65vw; }
+  .capabilityCard h2 {
+    padding-bottom: 1.78vw;
+    font-size: clamp(17px, 1.46vw, 28px);
+  }
+  .capabilityCard p {
+    margin-top: 3.29vw;
+    font-size: clamp(14px, 1.04vw, 20px);
+  }
   .presence {
-    padding-top: .94vw;
-    padding-bottom: 8.85vw;
+    padding-top: .85vw;
+    padding-bottom: 7.97vw;
   }
-  .presence h2 { margin-bottom: 3.85vw; }
+  .presence h2 {
+    margin-bottom: 3.47vw;
+    font-size: clamp(34px, 2.97vw, 56px);
+  }
+  .presence img { max-width: 1393px; }
   .homeNews {
-    padding-top: 1.3vw;
-    padding-bottom: 7.81vw;
+    padding-top: 1.17vw;
+    padding-bottom: 7.03vw;
   }
-  .homeNews > h2 { margin-bottom: 4.27vw; }
-  .newsSlide { min-height: 24.69vw; }
-  .newsCopy { padding-block: 1.56vw; }
-  .newsCopy h3 { margin-bottom: 1.98vw; }
-  .showMore { margin-top: 3.65vw; }
-  .carouselPrevious { left: -3.65vw; }
-  .carouselNext { right: -3.65vw; }
+  .homeNews > h2 {
+    margin-bottom: 3.84vw;
+    font-size: clamp(34px, 2.93vw, 56px);
+  }
+  .newsCarouselShell { max-width: 1485px; }
+  .newsSlide { gap: 6.3vw; min-height: 22.22vw; }
+  .newsCopy { padding-block: 1.4vw; }
+  .newsCopy h3 {
+    margin-bottom: 1.78vw;
+    font-size: clamp(27px, 2.12vw, 41px);
+  }
+  .newsCopy > p:not(.newsDate) { font-size: clamp(15px, 1.1vw, 21px); }
+  .showMore { margin-top: 3.29vw; }
+  .carouselPrevious { left: -3.29vw; }
+  .carouselNext { right: -3.29vw; }
+  .pageIntro h1 { font-size: clamp(44px, 6.3vw, 119px); }
+  .pageIntro > p,
+  .pageIntro > h2 { font-size: clamp(15px, 1.08vw, 21px); }
   .aboutIntro {
     width: var(--page);
-    padding-top: 2.71vw;
-    padding-bottom: 5.99vw;
+    padding-top: 2.44vw;
+    padding-bottom: 5.39vw;
   }
   .aboutOverview {
-    grid-template-columns: minmax(340px, 29.06vw) 1fr;
-    gap: 5.57vw;
-    padding-bottom: 7.81vw;
+    grid-template-columns: minmax(310px, 26.15vw) 1fr;
+    gap: 5.01vw;
+    padding-bottom: 7.03vw;
   }
-  .aboutOverview h2 { margin-bottom: 1.67vw; }
+  .aboutOverview h2 {
+    margin-bottom: 1.5vw;
+    font-size: clamp(43px, 3.78vw, 72px);
+  }
   .aboutOverview p {
-    margin-bottom: 1.2vw;
-    font-size: clamp(15px, .99vw, 18px);
+    margin-bottom: 1.08vw;
+    font-size: clamp(14px, .89vw, 17px);
   }
   .complianceBand {
-    gap: 4.17vw;
-    padding-top: 4.95vw;
-    padding-bottom: 5.63vw;
+    gap: 3.75vw;
+    padding-top: 4.46vw;
+    padding-bottom: 5.07vw;
   }
-  .complianceBand img { margin-bottom: 1.56vw; }
+  .complianceBand img { width: 68px; height: 56px; margin-bottom: 1.4vw; }
   .complianceBand h2 {
-    min-height: 4.38vw;
-    margin-bottom: 1.82vw;
-    font-size: clamp(15px, 1.04vw, 19px);
+    min-height: 3.94vw;
+    margin-bottom: 1.64vw;
+    font-size: clamp(14px, .94vw, 18px);
   }
-  .complianceBand p { font-size: clamp(12px, .78vw, 14px); }
+  .complianceBand p { font-size: clamp(11px, .7vw, 13px); }
   .alignment {
-    padding-top: 5.73vw;
-    padding-bottom: 7.29vw;
+    padding-top: 5.16vw;
+    padding-bottom: 6.56vw;
   }
-  .alignment > h2 { margin-bottom: 1.88vw; }
-  .alignment > p { margin-bottom: 3.49vw; }
-  .alignment ol { gap: 1.46vw; }
-  .alignment li { grid-template-columns: 7.29vw 8.59vw 1fr; }
-  .alignmentNumber { width: 5.73vw; height: 5.73vw; font-size: 1.67vw; }
-  .alignment li > img { width: 6.25vw; height: 6.25vw; }
-  .alignment li > div { padding-left: 2.08vw; }
-  .businessPage { padding-bottom: 4.58vw; }
-  .businessIntro { padding-top: 2.5vw; }
-  .businessIntro p { margin-block: 1.25vw; }
-  .businessIntro p:last-child { margin-top: 2.19vw; }
-  .businessGallery { margin-top: 3.91vw; }
+  .alignment > h2 {
+    margin-bottom: 1.69vw;
+    font-size: clamp(40px, 3.6vw, 67px);
+  }
+  .alignment > p { margin-bottom: 3.14vw; }
+  .alignment ol { gap: 1.31vw; }
+  .alignment li { grid-template-columns: 6.56vw 7.73vw 1fr; }
+  .alignmentNumber { width: 5.16vw; height: 5.16vw; font-size: 1.5vw; }
+  .alignment li > img { width: 5.63vw; height: 5.63vw; }
+  .alignment li > div { padding-left: 1.87vw; }
+  .alignment h3 { font-size: 19px; }
+  .alignment li p { font-size: 16px; }
+  .businessPage { padding-bottom: 4.12vw; }
+  .businessIntro { padding-top: 2.25vw; }
+  .businessIntro h1,
+  .investorsIntro h1 { font-size: clamp(49px, 7.2vw, 135px); }
+  .businessIntro h2 { font-size: clamp(17px, 1.4vw, 26px); }
+  .businessIntro p {
+    max-width: 1143px;
+    margin-block: 1.13vw;
+    font-size: clamp(15px, 1.06vw, 20px);
+  }
+  .businessIntro p:last-child { margin-top: 1.97vw; }
+  .businessGallery { margin-top: 3.52vw; }
   .businessCta a {
-    min-width: 15.94vw;
-    min-height: 3.91vw;
-    margin-top: 2.86vw;
-    padding-left: 1.77vw;
+    min-width: 14.35vw;
+    min-height: 3.52vw;
+    margin-top: 2.57vw;
+    padding-left: 1.59vw;
+    font-size: 18px;
   }
-  .businessCta b { width: 3.54vw; height: 3.54vw; }
+  .businessCta > span { font-size: 77px; }
+  .businessCta b { width: 3.19vw; height: 3.19vw; font-size: 50px; }
   .investorsIntro {
-    padding-top: 2.86vw;
-    padding-bottom: 7.81vw;
+    padding-top: 2.57vw;
+    padding-bottom: 7.03vw;
   }
-  .yearTimeline { gap: 4.69vw; padding-bottom: 6.25vw; }
-  .yearTimeline article { gap: 4.17vw; }
-  .timelineCard { padding: 1.25vw 1.98vw; }
-  .timelineCard h3 { font-size: clamp(19px, 1.35vw, 25px); }
-  .timelineCard p { font-size: clamp(15px, 1.04vw, 19px); }
-  .scaleBanner { padding-block: 2.5vw; }
-  .monthTimeline { padding-top: 5.21vw; padding-bottom: 7.81vw; }
+  .yearTimeline { gap: 4.22vw; padding-bottom: 5.63vw; }
+  .yearTimeline article { gap: 3.75vw; }
+  .yearTimeline h2 { font-size: clamp(63px, 6.3vw, 117px); }
+  .timelineCard { padding: 1.13vw 1.78vw; }
+  .timelineCard h3 { font-size: clamp(17px, 1.22vw, 23px); }
+  .timelineCard p { font-size: clamp(14px, .94vw, 17px); }
+  .scaleBanner { padding-block: 2.25vw; }
+  .scaleBanner strong { font-size: clamp(70px, 6.3vw, 122px); }
+  .scaleBanner h2 { font-size: 41px; }
+  .scaleBanner p { font-size: 15px; }
+  .monthTimeline { padding-top: 4.69vw; padding-bottom: 7.03vw; }
   .monthTimeline article {
-    min-height: 18.75vw;
-    gap: 4.17vw;
-    padding-block: 2.6vw;
+    min-height: 16.88vw;
+    gap: 3.75vw;
+    padding-block: 2.34vw;
   }
-  .newsArchivePage { padding-top: 2.34vw; padding-bottom: 6.25vw; }
-  .newsArchivePage > .archiveTagline { margin-bottom: 4.43vw; }
-  .newsArchiveCard { padding-block: 3.91vw; }
+  .monthTimeline h2 { font-size: 27px; }
+  .newsArchivePage { padding-top: 2.11vw; padding-bottom: 5.63vw; }
+  .newsArchivePage > h1 { font-size: clamp(65px, 7.2vw, 135px); }
+  .newsArchivePage > .archiveTagline { margin-bottom: 3.99vw; }
+  .newsArchiveCard { gap: 6.3vw; padding-block: 3.52vw; }
+  .newsArchiveCard h2 { font-size: clamp(25px, 2.34vw, 41px); }
+  .newsArchiveCard .newsSummary { font-size: 16px; }
+  .article { max-width: 846px; padding-top: 63px; padding-bottom: 108px; }
+  .article > h1 { font-size: clamp(40px, 4.5vw, 68px); }
+  .articleSummary { font-size: 19px; }
+  .articleBody { font-size: 16px; }
   .siteFooter {
-    min-height: 29.43vw;
-    gap: 6.77vw;
-    padding-block: 3.65vw;
+    min-height: 26.49vw;
+    gap: 6.09vw;
+    padding: 3.29vw 4.68vw;
   }
-  .footerLead > a img { width: 19.74vw; }
+  .footerLead > a img { width: 17.77vw; }
   .footerLead p {
-    margin: 1.67vw 0 1.2vw;
-    font-size: clamp(15px, .99vw, 18px);
+    margin: 1.5vw 0 1.08vw;
+    font-size: clamp(14px, .89vw, 17px);
   }
-  .footerActions { gap: .89vw; }
+  .footerActions { gap: .8vw; }
   .footerActions a,
   .footerActions span {
-    min-width: 8.33vw;
-    min-height: 2.55vw;
-    font-size: clamp(13px, .833vw, 15px);
+    min-width: 7.5vw;
+    min-height: 2.3vw;
+    font-size: clamp(12px, .75vw, 14px);
   }
-  .footerColumn { gap: 1.09vw; }
-  .footerColumn h2 { font-size: clamp(21px, 1.46vw, 27px); }
-  .footerColumn a { font-size: clamp(14px, .94vw, 17px); }
-  .footerPartner { gap: 1.15vw; }
-  .footerPartnerBadge { width: 17.97vw; }
-  .footerQr { width: 17.97vw; height: auto; }
+  .footerColumn { gap: .98vw; }
+  .footerColumn h2 { font-size: clamp(19px, 1.31vw, 25px); }
+  .footerColumn a { font-size: clamp(13px, .85vw, 16px); }
+  .footerPartner { gap: 1.04vw; }
+  .footerPartnerBadge,
+  .footerQr { width: 16.17vw; height: auto; }
 }
 
 @media (min-width: 821px) and (max-width: 1180px) {
