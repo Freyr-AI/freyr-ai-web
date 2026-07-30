@@ -6,8 +6,8 @@
     <meta name="description" content="Freyr GPUaaS delivers NVIDIA-powered AI compute at scale.">
     <title>GPUaaS — Freyr AI</title>
     <link rel="icon" href="../../public/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="../../styles.css?v=20260730-10">
-    <script src="../../script.js?v=20260730" defer></script>
+    <link rel="stylesheet" href="../../styles.css?v=20260730-11">
+    <script src="../../script.js?v=20260730-2" defer></script>
   </head>
   <body>
     <header class="siteHeader">
@@ -35,16 +35,38 @@
         <p>With a strategic footprint spanning key global markets—Singapore, Thailand, Indonesia, Malaysia, Australia, Japan, Canada, and more—we provide localized, compliant infrastructure tailored for regional needs.</p>
         <p><em>Powering Intelligence. One Platform. Endless Scale.</em></p>
       </section>
-      <section class="businessGallery contentWidth" aria-label="Freyr AI infrastructure locations">
-        <img src="../../public/design/business-01.jpg" width="436" height="329" alt="Freyr AI facility" loading="lazy">
-        <img src="../../public/design/business-02.jpg" width="436" height="329" alt="AI data center campus" loading="lazy">
-        <img src="../../public/design/business-03.jpg" width="436" height="329" alt="AI infrastructure building" loading="lazy">
-        <img src="../../public/design/business-04.jpg" width="436" height="329" alt="AI data center" loading="lazy">
-        <img src="../../public/design/business-05.jpg" width="436" height="329" alt="Freyr AI data center at night" loading="lazy">
-        <img src="../../public/design/business-06.jpg" width="436" height="329" alt="High-density AI cooling infrastructure" loading="lazy">
+      <section id="project-gallery" class="businessGallery contentWidth" aria-label="Freyr AI infrastructure projects" aria-live="polite">
+        <p class="projectLoading">Loading projects…</p>
       </section>
-      <div class="businessCta"><span aria-hidden="true">⌄</span><a href="mailto:contact@freyr-ai.com">Contact Us <b>›</b></a></div>
+      <div class="projectPager">
+        <button id="project-page-toggle" type="button" aria-label="Show projects 7 and 8" aria-controls="project-gallery">
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="businessCta"><a href="mailto:contact@freyr-ai.com">Contact Us <b>›</b></a></div>
     </main>
+    <dialog id="project-dialog" class="projectDialog" aria-labelledby="project-dialog-title" aria-describedby="project-dialog-description">
+      <div class="projectDialogCard">
+        <button class="projectDialogClose" type="button" aria-label="Close project details">
+          <img src="../../public/design/project-modal-close.png" width="66" height="66" alt="">
+        </button>
+        <div class="projectDialogLayout">
+          <div class="projectDialogCopy">
+            <h2 id="project-dialog-title"></h2>
+            <p class="projectDialogLocation"></p>
+            <p id="project-dialog-description" class="projectDialogDescription"></p>
+          </div>
+          <img class="projectDialogImage" src="../../public/design/projects/Freyr_E_B1_07.jpg" alt="Freyr E-B1, Thailand Bangkok">
+          <dl class="projectDialogFacts">
+            <div><dt>Status</dt><dd data-project-fact="status"></dd></div>
+            <div><dt>Current IT Power</dt><dd data-project-fact="currentPower"></dd></div>
+            <div><dt>Projected IT Power</dt><dd data-project-fact="projectedPower"></dd></div>
+            <div><dt>Hardware</dt><dd data-project-fact="hardware"></dd></div>
+            <div><dt>Cooling</dt><dd data-project-fact="cooling"></dd></div>
+          </dl>
+        </div>
+      </div>
+    </dialog>
     <footer class="siteFooter">
       <div class="footerLead"><a href="../../"><img src="../../public/design/logo-white.png" width="379" height="87" alt="Freyr"></a><p>Accelerating AI Infrastructure with<br>Standard and Platform</p><div class="footerActions"><a href="mailto:contact@freyr-ai.com">Contact Us</a><span aria-disabled="true">LinkedIn</span></div></div>
       <div class="footerColumn"><h2>Business</h2><a href="./">GPUaas</a><a href="https://www.token-exchange-ai.com/" target="_blank" rel="noopener">Token Platform</a></div>

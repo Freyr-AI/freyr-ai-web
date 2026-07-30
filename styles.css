@@ -377,11 +377,93 @@ img { display: block; max-width: 100%; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
+  align-items: start;
   margin-top: 75px;
 }
-.businessGallery img { width: 100%; aspect-ratio: 1.325; object-fit: cover; }
+.projectLoading { grid-column: 1 / -1; color: var(--muted); text-align: center; }
+.projectCard {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: #e7e8ed;
+  cursor: pointer;
+  text-align: left;
+}
+.projectCard > img {
+  width: 100%;
+  aspect-ratio: 1.325;
+  object-fit: cover;
+  transition: transform .35s ease;
+}
+.projectOverlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-content: center;
+  gap: 25px;
+  padding: 28px;
+  opacity: 0;
+  background: rgba(17, 21, 39, .7);
+  color: #fff;
+  text-align: center;
+  transition: opacity .25s ease;
+}
+.projectOverlay strong {
+  font-size: clamp(17px, 1.3vw, 25px);
+  font-weight: 400;
+}
+.projectOverlayFacts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 26px;
+  font-size: clamp(12px, .85vw, 16px);
+  line-height: 1.25;
+}
+.projectCard:hover .projectOverlay,
+.projectCard:focus-visible .projectOverlay { opacity: 1; }
+.projectCard:hover > img,
+.projectCard:focus-visible > img { transform: scale(1.025); }
+.projectCard:focus-visible { outline: 3px solid #7781af; outline-offset: 3px; }
+.projectPager { display: grid; min-height: 92px; place-items: center; }
+.projectPager button {
+  display: grid;
+  width: 88px;
+  height: 70px;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.projectPager button > span {
+  position: relative;
+  width: 52px;
+  height: 42px;
+  transition: transform .25s ease;
+}
+.projectPager button > span::before,
+.projectPager button > span::after {
+  position: absolute;
+  left: 50%;
+  width: 34px;
+  height: 34px;
+  border-right: 9px solid #8f94b4;
+  border-bottom: 9px solid #8f94b4;
+  content: "";
+  transform: translateX(-50%) rotate(45deg);
+}
+.projectPager button > span::before { top: -10px; }
+.projectPager button > span::after { top: 7px; }
+.projectPager button.isPrevious > span { transform: rotate(180deg); }
+.projectPager button:focus-visible {
+  border-radius: 10px;
+  outline: 3px solid #7781af;
+  outline-offset: 2px;
+}
 .businessCta { display: grid; justify-items: center; margin-top: 12px; }
-.businessCta > span { color: #8a90a8; font-size: 86px; line-height: .8; }
 .businessCta a {
   display: flex;
   min-width: 306px;
@@ -408,6 +490,90 @@ img { display: block; max-width: 100%; }
   font-weight: 400;
   line-height: 1;
 }
+
+body.hasOpenDialog { overflow: hidden; }
+.projectDialog {
+  width: min(92vw, 1260px);
+  max-width: none;
+  max-height: 100vh;
+  padding: 45px 18px 20px;
+  border: 0;
+  overflow-y: auto;
+  background: transparent;
+  color: var(--ink);
+}
+.projectDialog::backdrop { background: rgba(255, 255, 255, .84); }
+.projectDialogCard {
+  position: relative;
+  padding: 75px 64px 42px;
+  overflow: visible;
+  background: #fff;
+  box-shadow: 8px 13px 24px rgba(20, 25, 52, .35);
+}
+.projectDialogCard::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: clamp(220px, 17.3vw, 332px);
+  aspect-ratio: 332 / 58;
+  background: url("./public/design/project-modal-top.png") center / contain no-repeat;
+  content: "";
+  transform: translate(-50%, -100%);
+}
+.projectDialogClose {
+  position: absolute;
+  z-index: 2;
+  top: 12px;
+  left: 50%;
+  width: 66px;
+  height: 66px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--ink);
+  cursor: pointer;
+  transform: translateX(-50%);
+}
+.projectDialogClose img { width: 66px; height: 66px; }
+.projectDialogClose:focus-visible { outline: 3px solid #9da5cf; outline-offset: 4px; }
+.projectDialogLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(310px, .95fr);
+  gap: 30px 56px;
+  align-items: start;
+}
+.projectDialogCopy h2 { margin: 0 0 12px; font-size: clamp(23px, 1.7vw, 32px); }
+.projectDialogLocation { margin: 0 0 24px; color: #6d7390; font-size: 18px; }
+.projectDialogDescription {
+  margin: 0;
+  color: #555d7d;
+  font-size: clamp(15px, 1vw, 19px);
+  line-height: 1.62;
+}
+.projectDialogImage {
+  width: auto;
+  max-width: 100%;
+  max-height: 390px;
+  align-self: center;
+  justify-self: center;
+  object-fit: contain;
+}
+.projectDialogFacts {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px 42px;
+  margin: 0;
+  color: #525a7a;
+}
+.projectDialogFacts div { display: grid; grid-template-columns: max-content 1fr; gap: 8px; }
+.projectDialogFacts div:first-child { grid-column: 1 / -1; }
+.projectDialogFacts dt {
+  font-size: clamp(14px, .95vw, 18px);
+  text-transform: uppercase;
+}
+.projectDialogFacts dt::after { content: ":"; }
+.projectDialogFacts dd { margin: 0; font-size: clamp(14px, .95vw, 18px); }
 
 .investorsIntro { padding-top: 55px; padding-bottom: 150px; }
 .investorsIntro h1 { font-size: clamp(54px, 8vw, 150px); }
@@ -755,6 +921,7 @@ img { display: block; max-width: 100%; }
   .homeNews { padding-top: 20px; }
   .businessIntro,
   .businessGallery { width: min(69.27vw, 1330px); }
+  .businessGallery.isSecondPage { min-height: min(34.85vw, 669px); }
 }
 
 @media (min-width: 821px) and (max-width: 1180px) {
@@ -879,7 +1046,34 @@ img { display: block; max-width: 100%; }
   .alignment h3 { font-size: 17px; }
   .alignment li p { font-size: 15px; }
   .businessGallery { grid-template-columns: repeat(2, 1fr); margin-top: 45px; }
+  .businessGallery.isSecondPage { min-height: 0; }
+  .projectOverlay { gap: 14px; padding: 18px; opacity: 1; background: rgba(17, 21, 39, .58); }
+  .projectOverlay strong { font-size: 18px; }
+  .projectOverlayFacts { gap: 10px 14px; font-size: 13px; }
+  .projectPager { min-height: 78px; }
   .businessCta a { min-width: 260px; }
+  .projectDialog {
+    width: min(96vw, 720px);
+    padding: 40px 10px 12px;
+  }
+  .projectDialogCard {
+    padding: 68px 24px 32px;
+  }
+  .projectDialogCard::before { width: min(58vw, 220px); }
+  .projectDialogClose { top: 7px; }
+  .projectDialogLayout { grid-template-columns: 1fr; gap: 25px; }
+  .projectDialogImage {
+    max-height: 360px;
+    grid-row: 2;
+    object-fit: contain;
+  }
+  .projectDialogFacts {
+    grid-column: 1;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .projectDialogFacts div:first-child { grid-column: 1; }
+  .projectDialogFacts div { grid-template-columns: minmax(135px, max-content) 1fr; gap: 7px; }
   .yearTimeline::before,
   .monthTimeline::before { left: 16px; }
   .yearTimeline article,
@@ -922,11 +1116,19 @@ img { display: block; max-width: 100%; }
   .alignment li > img { display: none; }
   .alignment li > div { padding-left: 15px; }
   .businessGallery { grid-template-columns: 1fr; gap: 6px; }
+  .projectOverlay { padding: 22px; }
+  .projectOverlay strong { font-size: 21px; }
+  .projectOverlayFacts { font-size: 14px; }
+  .projectDialogFacts div { grid-template-columns: 1fr; gap: 2px; }
   .scaleBanner > div { grid-template-columns: 1fr; text-align: center; }
   .scaleBanner h2 { font-size: 25px; }
   .pageIntro h1 { font-size: 58px; }
   .footerActions a,
   .footerActions span { min-width: 130px; min-height: 44px; }
+}
+
+@media (hover: none) {
+  .projectOverlay { opacity: 1; background: rgba(17, 21, 39, .58); }
 }
 
 @media (prefers-reduced-motion: reduce) {
