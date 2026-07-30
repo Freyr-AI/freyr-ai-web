@@ -121,7 +121,7 @@ img { display: block; max-width: 100%; }
   gap: 30px;
   margin: 0;
   color: #1f2659;
-  font-size: clamp(46px, 3.75vw, 72px);
+  font-size: clamp(34px, 3.75vw, 72px);
   font-weight: 300;
   letter-spacing: -.055em;
   line-height: 1;
@@ -143,7 +143,7 @@ img { display: block; max-width: 100%; }
 .pillButton:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(23, 31, 90, .18); }
 .stats {
   display: grid;
-  min-height: 376px;
+  min-height: 280px;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   padding: 40px max(5vw, 28px);
@@ -189,14 +189,14 @@ img { display: block; max-width: 100%; }
   margin: 0;
   padding: 0 0 38px;
   border-bottom: 1px solid #9fa2b6;
-  font-size: clamp(23px, 1.62vw, 31px);
+  font-size: clamp(18px, 1.62vw, 31px);
   line-height: 1.5;
 }
 .capabilityCard p {
   max-width: 310px;
   margin: 70px auto 0;
   color: #4d5477;
-  font-size: clamp(17px, 1.15vw, 22px);
+  font-size: clamp(15px, 1.15vw, 22px);
   line-height: 1.62;
 }
 .presence { padding-top: 18px; padding-bottom: 170px; text-align: center; }
@@ -291,7 +291,7 @@ img { display: block; max-width: 100%; }
 
 .pageIntro h1 {
   margin: 0;
-  font-size: clamp(64px, 7vw, 132px);
+  font-size: clamp(48px, 7vw, 132px);
   letter-spacing: -.06em;
   line-height: .86;
 }
@@ -355,7 +355,7 @@ img { display: block; max-width: 100%; }
 
 .businessPage { padding-bottom: 88px; }
 .businessIntro { padding-top: 48px; }
-.businessIntro h1 { font-size: clamp(72px, 8vw, 150px); }
+.businessIntro h1 { font-size: clamp(54px, 8vw, 150px); }
 .businessIntro h2 { margin-top: 0; font-size: clamp(18px, 1.55vw, 29px); }
 .businessIntro p { max-width: 1270px; margin: 24px 0; font-size: clamp(16px, 1.18vw, 22px); line-height: 1.55; }
 .businessIntro p:last-child { margin-top: 42px; }
@@ -396,7 +396,7 @@ img { display: block; max-width: 100%; }
 }
 
 .investorsIntro { padding-top: 55px; padding-bottom: 150px; }
-.investorsIntro h1 { font-size: clamp(72px, 8vw, 150px); }
+.investorsIntro h1 { font-size: clamp(54px, 8vw, 150px); }
 .yearTimeline,
 .monthTimeline { position: relative; }
 .yearTimeline::before,
@@ -543,22 +543,180 @@ img { display: block; max-width: 100%; }
 .footerColumn a { font-size: 18px; }
 .footerPartner { display: grid; justify-items: start; gap: 22px; }
 .footerPartnerBadge { width: 345px; height: auto; }
-.footerQr { width: 345px; height: 342px; object-fit: cover; }
+.footerQr { width: 345px; height: auto; object-fit: contain; }
 
-@media (max-width: 1180px) {
+@media (min-width: 821px) and (max-width: 1600px) {
+  :root { --page: min(100% - 5.42vw, 1330px); }
+  .siteHeader {
+    min-height: clamp(80px, 7.8125vw, 125px);
+    padding-inline: 5.2vw;
+  }
+  .brand { margin-top: clamp(22px, 2.24vw, 36px); }
+  .brand img { width: clamp(130px, 13.02vw, 208px); }
+  .siteHeader nav {
+    min-height: clamp(48px, 3.54vw, 57px);
+    gap: clamp(22px, 3vw, 48px);
+    margin-top: clamp(20px, 1.72vw, 28px);
+  }
+  .siteHeader nav > a,
+  .businessToggle {
+    min-height: clamp(48px, 3.54vw, 57px);
+    font-size: clamp(13px, .833vw, 15px);
+  }
+  .businessSubnav { min-width: clamp(150px, 9.9vw, 180px); }
+  .businessSubnav a { padding: .57vw 1.15vw; font-size: clamp(13px, .78vw, 15px); }
+  .homeHero { min-height: 34.84vw; }
+  .homeHeroCopy {
+    width: calc(100% - 5.42vw);
+    padding-top: 2.97vw;
+  }
+  .heroPartner {
+    width: 8.65vw;
+    margin-bottom: 2.08vw;
+  }
+  .homeHero h1 { gap: 1.56vw; }
+  .pillButton {
+    min-width: 9.22vw;
+    min-height: 2.66vw;
+    margin-top: 2.34vw;
+    font-size: clamp(13px, .885vw, 16px);
+  }
+  .stats {
+    min-height: 14.58vw;
+    padding-block: 2.08vw;
+  }
+  .stats div { gap: .625vw; }
+  .capabilities {
+    padding-top: 9.74vw;
+    padding-bottom: 10.31vw;
+  }
+  .capabilityGrid { gap: 5.2vw; }
+  .capabilityCard {
+    min-height: max(360px, 31.93vw);
+    padding: 5.42vw 2.24vw 2.71vw;
+    border-radius: .78vw;
+  }
+  .capabilityCard > img {
+    top: -4.06vw;
+    width: 9.64vw;
+    height: 8.02vw;
+  }
+  .capabilityCard h2 { padding-bottom: 1.98vw; }
+  .capabilityCard p { margin-top: 3.65vw; }
+  .presence {
+    padding-top: .94vw;
+    padding-bottom: 8.85vw;
+  }
+  .presence h2 { margin-bottom: 3.85vw; }
+  .homeNews {
+    padding-top: 1.3vw;
+    padding-bottom: 7.81vw;
+  }
+  .homeNews > h2 { margin-bottom: 4.27vw; }
+  .newsSlide { min-height: 24.69vw; }
+  .newsCopy { padding-block: 1.56vw; }
+  .newsCopy h3 { margin-bottom: 1.98vw; }
+  .showMore { margin-top: 3.65vw; }
+  .carouselPrevious { left: -3.65vw; }
+  .carouselNext { right: -3.65vw; }
+  .aboutIntro {
+    width: var(--page);
+    padding-top: 2.71vw;
+    padding-bottom: 5.99vw;
+  }
+  .aboutOverview {
+    grid-template-columns: minmax(340px, 29.06vw) 1fr;
+    gap: 5.57vw;
+    padding-bottom: 7.81vw;
+  }
+  .aboutOverview h2 { margin-bottom: 1.67vw; }
+  .aboutOverview p {
+    margin-bottom: 1.2vw;
+    font-size: clamp(15px, .99vw, 18px);
+  }
+  .complianceBand {
+    gap: 4.17vw;
+    padding-top: 4.95vw;
+    padding-bottom: 5.63vw;
+  }
+  .complianceBand img { margin-bottom: 1.56vw; }
+  .complianceBand h2 {
+    min-height: 4.38vw;
+    margin-bottom: 1.82vw;
+    font-size: clamp(15px, 1.04vw, 19px);
+  }
+  .complianceBand p { font-size: clamp(12px, .78vw, 14px); }
+  .alignment {
+    padding-top: 5.73vw;
+    padding-bottom: 7.29vw;
+  }
+  .alignment > h2 { margin-bottom: 1.88vw; }
+  .alignment > p { margin-bottom: 3.49vw; }
+  .alignment ol { gap: 1.46vw; }
+  .alignment li { grid-template-columns: 7.29vw 8.59vw 1fr; }
+  .alignmentNumber { width: 5.73vw; height: 5.73vw; font-size: 1.67vw; }
+  .alignment li > img { width: 6.25vw; height: 6.25vw; }
+  .alignment li > div { padding-left: 2.08vw; }
+  .businessPage { padding-bottom: 4.58vw; }
+  .businessIntro { padding-top: 2.5vw; }
+  .businessIntro p { margin-block: 1.25vw; }
+  .businessIntro p:last-child { margin-top: 2.19vw; }
+  .businessGallery { margin-top: 3.91vw; }
+  .businessCta a {
+    min-width: 15.94vw;
+    min-height: 3.91vw;
+    margin-top: 2.86vw;
+    padding-left: 1.77vw;
+  }
+  .businessCta b { width: 3.54vw; height: 3.54vw; }
+  .investorsIntro {
+    padding-top: 2.86vw;
+    padding-bottom: 7.81vw;
+  }
+  .yearTimeline { gap: 4.69vw; padding-bottom: 6.25vw; }
+  .yearTimeline article { gap: 4.17vw; }
+  .timelineCard { padding: 1.25vw 1.98vw; }
+  .timelineCard h3 { font-size: clamp(19px, 1.35vw, 25px); }
+  .timelineCard p { font-size: clamp(15px, 1.04vw, 19px); }
+  .scaleBanner { padding-block: 2.5vw; }
+  .monthTimeline { padding-top: 5.21vw; padding-bottom: 7.81vw; }
+  .monthTimeline article {
+    min-height: 18.75vw;
+    gap: 4.17vw;
+    padding-block: 2.6vw;
+  }
+  .newsArchivePage { padding-top: 2.34vw; padding-bottom: 6.25vw; }
+  .newsArchivePage > .archiveTagline { margin-bottom: 4.43vw; }
+  .newsArchiveCard { padding-block: 3.91vw; }
+  .siteFooter {
+    min-height: 29.43vw;
+    gap: 6.77vw;
+    padding-block: 3.65vw;
+  }
+  .footerLead > a img { width: 19.74vw; }
+  .footerLead p {
+    margin: 1.67vw 0 1.2vw;
+    font-size: clamp(15px, .99vw, 18px);
+  }
+  .footerActions { gap: .89vw; }
+  .footerActions a,
+  .footerActions span {
+    min-width: 8.33vw;
+    min-height: 2.55vw;
+    font-size: clamp(13px, .833vw, 15px);
+  }
+  .footerColumn { gap: 1.09vw; }
+  .footerColumn h2 { font-size: clamp(21px, 1.46vw, 27px); }
+  .footerColumn a { font-size: clamp(14px, .94vw, 17px); }
+  .footerPartner { gap: 1.15vw; }
+  .footerPartnerBadge { width: 17.97vw; }
+  .footerQr { width: 17.97vw; height: auto; }
+}
+
+@media (min-width: 821px) and (max-width: 1180px) {
   :root { --page: min(100% - 64px, 1120px); }
-  .siteHeader { min-height: 118px; }
-  .brand { margin-top: 34px; }
-  .brand img { width: 205px; }
-  .siteHeader nav { gap: 25px; margin-top: 22px; }
-  .homeHero { min-height: 560px; }
-  .homeHeroCopy { width: min(100% - 64px, 1116px); padding-top: 38px; }
-  .heroPartner { margin-bottom: 26px; }
-  .homeHero h1 { gap: 24px; }
-  .stats { min-height: 280px; }
   .capabilityGrid { gap: 42px; }
-  .capabilityCard { min-height: 500px; padding-inline: 26px; }
-  .capabilityCard p { margin-top: 42px; }
+  .capabilityCard { padding-inline: 22px; }
   .aboutOverview { grid-template-columns: minmax(300px, 440px) 1fr; gap: 60px; }
   .complianceBand { gap: 30px; }
   .complianceBand h2 { font-size: 17px; }
