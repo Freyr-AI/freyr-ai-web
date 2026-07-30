@@ -3,195 +3,133 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta
-      name="description"
-      content="Freyr builds high-performance GPU infrastructure and token platforms for the next generation of AI."
-    >
-    <title>Freyr AI — Accelerated AI Infrastructure</title>
+    <meta name="description" content="Freyr AI builds, finances and operates scalable AI infrastructure.">
+    <title>Freyr AI — Transform Power into Intelligence</title>
     <link rel="icon" href="./public/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="./styles.css?v=19d2c2f">
-    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./styles.css?v=20260730">
+    <script src="./script.js?v=20260730" defer></script>
   </head>
   <body>
-    <main id="top">
-      <header class="siteHeader">
-        <a class="brand" href="#top" aria-label="Freyr home">
-          <img src="./public/freyr-logo-transparent.png" width="520" height="170" alt="Freyr">
-        </a>
-
-        <button
-          class="menuToggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="main-navigation"
-          aria-label="Open navigation"
-        >
-          <span></span><span></span><span></span>
-        </button>
-
-        <nav id="main-navigation" aria-label="Main navigation">
-          <a class="active" href="#top">Home</a>
-          <div class="navBusiness">
-            <a href="#business">Business</a>
-            <div class="businessSubnav" aria-label="Business navigation">
-              <a href="#business">GPUaaS</a>
-              <a href="#business">Token Platform</a>
-            </div>
+    <header class="siteHeader">
+      <a class="brand" href="./" aria-label="Freyr home">
+        <img src="./public/design/logo.png" width="250" height="57" alt="Freyr">
+      </a>
+      <button class="menuToggle" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Open navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-navigation" aria-label="Main navigation">
+        <a class="active" href="./">Home</a>
+        <div class="navBusiness">
+          <button class="businessToggle" type="button" aria-expanded="false">
+            Business <span aria-hidden="true"></span>
+          </button>
+          <div class="businessSubnav">
+            <a href="./business/gpuaas/">GPUaaS</a>
+            <a href="https://www.token-exchange-ai.com/" target="_blank" rel="noopener">Token Platform</a>
           </div>
-          <a href="#news">News</a>
-          <a href="#investors">For Investors</a>
-          <a href="#news">Blog</a>
-          <a href="#about">About Freyr</a>
-        </nav>
-      </header>
+        </div>
+        <a href="./news/">News</a>
+        <a href="./investors/">For Investors</a>
+        <a href="./about/">About Freyr</a>
+      </nav>
+    </header>
 
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="heroCopy">
-          <div class="partnerBadge">
-            <img
-              src="./public/nvidia-preferred-partner-v2.jpg"
-              width="220"
-              height="100"
-              alt="NVIDIA Preferred Partner"
-            >
-          </div>
-          <h1 id="hero-title">
+    <main>
+      <section class="homeHero" aria-labelledby="home-title">
+        <div class="homeHeroCopy">
+          <img class="heroPartner" src="./public/nvidia-preferred-partner-v2.jpg" width="220" height="100" alt="NVIDIA Preferred Partner">
+          <h1 id="home-title">
             <span>TRANSFORM</span>
             <span>POWER INTO INTELLIGENCE:</span>
             <span>BUILD, FINANCE AND OPERATE</span>
           </h1>
-          <div class="heroActions">
-            <a class="button buttonPrimary" href="#business">Why Freyr</a>
-            <a class="button buttonGhost" href="#news">Read the blog</a>
-          </div>
+          <a class="pillButton" href="./about/">Why Freyr</a>
         </div>
-        <div class="rackScene" role="img" aria-label="High-performance data center infrastructure"></div>
       </section>
 
-      <section class="stats" aria-label="Infrastructure scale">
-        <div><strong>1536<sup>+</sup></strong><span>B300 GPUs</span></div>
-        <div><strong>162<sup>+</sup></strong><span>Next-Gen GPUs (GB300+GB200)</span></div>
-        <div><strong>770<sup>MW</sup></strong><span>VR72 Pipeline</span></div>
+      <section class="stats" aria-label="Freyr AI scale">
+        <div><strong>13</strong><span>Key Markets</span></div>
+        <div><strong>18</strong><span>Projects</span></div>
+        <div><strong>792<small>MW</small></strong><span>VR72 Pipeline</span></div>
       </section>
 
-      <section class="capabilities section" id="business" aria-labelledby="capabilities-title">
-        <h2 class="srOnly" id="capabilities-title">Infrastructure designed to perform.</h2>
+      <section class="capabilities pageSection" aria-label="Freyr AI capabilities">
         <div class="capabilityGrid">
           <article class="capabilityCard">
-            <div class="capabilityIcon" aria-hidden="true">
-              <img src="./public/icon-reference-architecture-transparent.png" width="230" height="190" alt="">
-            </div>
-            <h3>NVIDIA REFERENCE ARCHITECTURE</h3>
+            <img src="./public/icon-reference-architecture-transparent.png" width="230" height="190" alt="" loading="lazy">
+            <h2>NVIDIA REFERENCE<br>ARCHITECTURE</h2>
             <p>Built on proven NVIDIA reference architecture for performance and scale.</p>
           </article>
           <article class="capabilityCard">
-            <div class="capabilityIcon" aria-hidden="true">
-              <img src="./public/icon-reference-deployment-transparent.png" width="230" height="190" alt="">
-            </div>
-            <h3>FREYR REFERENCE DEPLOYMENT</h3>
-            <p>Validated deployment model ensuring efficiency, reliability, and compliance.</p>
+            <img src="./public/icon-reference-deployment-transparent.png" width="230" height="190" alt="" loading="lazy">
+            <h2>FREYR REFERENCE<br>DEPLOYMENT</h2>
+            <p>Validated deployment model ensuring efficiency, reliability and compliance.</p>
           </article>
           <article class="capabilityCard">
-            <div class="capabilityIcon" aria-hidden="true">
-              <img src="./public/icon-standard-platform-transparent.png" width="230" height="190" alt="">
-            </div>
-            <h3>STANDARD AND PLATFORM</h3>
+            <img src="./public/icon-standard-platform-transparent.png" width="230" height="190" alt="" loading="lazy">
+            <h2>STANDARD AND<br>PLATFORM</h2>
             <p>Standardized infrastructure and platform enabling interoperability and scalability.</p>
           </article>
         </div>
       </section>
 
-      <section class="locations section" aria-labelledby="locations-title">
-        <div class="sectionIntro centered">
-          <p class="kicker">GLOBAL PRESENCE</p>
-          <h2 id="locations-title">FreyrAI Locations</h2>
-        </div>
-        <div class="map">
-          <img
-            src="./public/map-locations.jpg"
-            width="1600"
-            height="900"
-            alt="Freyr AI locations across North America, the Middle East, Asia, and Australia"
-            loading="lazy"
-          >
-        </div>
+      <section class="presence pageSection" aria-labelledby="presence-title">
+        <h2 id="presence-title">FreyrAI Global Presence</h2>
+        <img src="./public/design/global-presence.jpg" width="1548" height="854" alt="Freyr AI presence in 13 global markets" loading="lazy">
       </section>
 
-      <section class="news section" id="news" aria-labelledby="news-title">
-        <div class="sectionIntro centered">
-          <p class="kicker">OUR LATEST NEWS</p>
-          <h2 id="news-title">Building the future of accelerated compute.</h2>
-        </div>
-        <div id="news-list" class="newsList" data-news-limit="3">
-          <article class="newsFeature">
-            <div class="newsCopy">
-              <p class="newsDate">APRIL 15, 2026 · PARTNERSHIP</p>
-              <h3>Freyr Technology AI Renews NVIDIA Preferred Cloud Partner Status</h3>
-              <p>
-                Freyr Technology AI has renewed its NVIDIA Preferred Cloud Partner —
-                Compute competency status within the NVIDIA Partner Network.
-              </p>
-              <a class="textLink" href="#news">Show more <span>→</span></a>
-            </div>
-            <div class="newsVisual">
-              <img
-                src="./content/news/nvidia-preferred-cloud-partner/news-partner-card.jpg"
-                width="830"
-                height="500"
-                alt="Scalable Compute. Instant Tokens."
-                loading="lazy"
-              >
-            </div>
-          </article>
-        </div>
-        <div class="newsArchiveLink">
-          <a class="button buttonGhost" href="./news/">View all news</a>
-        </div>
-      </section>
-
-      <footer id="about">
-        <div class="footerLead">
-          <a class="brand brandInverse" href="#top" aria-label="Freyr home">
-            <img src="./public/freyr-logo-transparent.png" width="520" height="170" alt="Freyr">
-          </a>
-          <p>Accelerating AI Infrastructure<br>with Standard and Platform.</p>
-          <div>
-            <a href="mailto:contact@freyr-ai.com">Contact us</a>
-            <a href="#top">LinkedIn</a>
+      <section class="homeNews pageSection" aria-labelledby="news-title">
+        <h2 id="news-title">Our latest news</h2>
+        <div class="newsCarouselShell">
+          <button class="carouselArrow carouselPrevious" type="button" aria-label="Previous news">
+            <span aria-hidden="true">‹</span>
+          </button>
+          <div id="news-list" class="newsCarousel" aria-live="polite">
+            <article class="newsSlide">
+              <div class="newsCopy">
+                <p class="newsDate">JULY 23, 2026 · INSIGHT</p>
+                <h3>Building AI Infrastructure Ready for Scale</h3>
+                <p>A practical look at the compute, networking, and operational foundations required to move AI workloads from early experiments into dependable production.</p>
+                <a class="showMore" href="./news/building-ai-infrastructure-ready-for-scale/"><span>›</span> Show More</a>
+              </div>
+              <div class="newsVisual">
+                <img src="./content/news/building-ai-infrastructure-ready-for-scale/ai-infrastructure-cover.jpg" width="1200" height="630" alt="Building AI Infrastructure Ready for Scale" loading="lazy">
+              </div>
+            </article>
           </div>
+          <button class="carouselArrow carouselNext" type="button" aria-label="Next news">
+            <span aria-hidden="true">›</span>
+          </button>
         </div>
-        <div class="footerColumn">
-          <h3>Business</h3>
-          <a href="#business">GPUaaS</a>
-          <a href="#business">Token Platform</a>
-        </div>
-        <div class="footerColumn">
-          <h3>Company</h3>
-          <a href="#about">About us</a>
-          <a href="#news">Blog</a>
-          <a href="#news">News</a>
-          <a href="#about">Careers</a>
-        </div>
-        <div class="footerPartner" id="investors">
-          <img
-            class="footerPartnerBadge"
-            src="./public/nvidia-preferred-partner-footer.jpg"
-            width="380"
-            height="160"
-            alt="NVIDIA Preferred Partner"
-            loading="lazy"
-          >
-          <img
-            class="footerQr"
-            src="./public/contact-qr.jpg"
-            width="400"
-            height="400"
-            alt="Freyr contact QR code"
-            loading="lazy"
-          >
-          <p>Powering dependable, scalable AI infrastructure worldwide.</p>
-        </div>
-      </footer>
+        <p class="carouselStatus" aria-hidden="true"><span>1</span> / <span>1</span></p>
+        <a class="archiveLink" href="./news/">View all news</a>
+      </section>
     </main>
+
+    <footer class="siteFooter">
+      <div class="footerLead">
+        <a href="./" aria-label="Freyr home"><img src="./public/design/logo-white.png" width="379" height="87" alt="Freyr"></a>
+        <p>Accelerating AI Infrastructure with<br>Standard and Platform</p>
+        <div class="footerActions">
+          <a href="mailto:contact@freyr-ai.com">Contact Us</a>
+          <span aria-disabled="true">LinkedIn</span>
+        </div>
+      </div>
+      <div class="footerColumn">
+        <h2>Business</h2>
+        <a href="./business/gpuaas/">GPUaas</a>
+        <a href="https://www.token-exchange-ai.com/" target="_blank" rel="noopener">Token Platform</a>
+      </div>
+      <div class="footerColumn">
+        <h2>Company</h2>
+        <a href="./about/">About Us</a>
+        <a href="./news/">News</a>
+        <a href="./investors/">For Investors</a>
+      </div>
+      <div class="footerPartner">
+        <img class="footerPartnerBadge" src="./public/nvidia-preferred-partner-footer.jpg" width="380" height="160" alt="NVIDIA Preferred Partner" loading="lazy">
+        <img class="footerQr" src="./public/design/contact-qr.jpg" width="345" height="342" alt="Freyr contact QR code" loading="lazy">
+      </div>
+    </footer>
   </body>
 </html>

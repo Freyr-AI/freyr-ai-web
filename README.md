@@ -5,6 +5,17 @@ deployed website has no framework, npm runtime, backend, database, or API.
 GitHub Actions uses a small Python build script to turn Markdown news files into
 static HTML before deployment.
 
+The static site includes:
+
+- `/` — company homepage.
+- `/business/gpuaas/` — GPUaaS business page.
+- `/about/` — company and platform information.
+- `/investors/` — milestones and investor roadmap.
+- `/news/` — generated news archive and Markdown article pages.
+
+The Business menu links Token Platform to
+`https://www.token-exchange-ai.com/`.
+
 ## Add a news article
 
 1. Copy the complete `content/news/_template/` directory.
@@ -43,10 +54,9 @@ Then open `http://localhost:8080`.
 
 ## Deployment
 
-The public website is deployed through GitHub Pages from the separate public
-mirror repository:
+The public website is deployed through GitHub Pages from:
 
-- Repository: `Freyr-AI/freyr-web.github.io`
+- Repository: `Freyr-AI/freyr-ai-web`
 - Deployment workflow: `.github/workflows/deploy-pages.yml`
 - Website: `https://newhome.token-exchange-ai.com/`
 

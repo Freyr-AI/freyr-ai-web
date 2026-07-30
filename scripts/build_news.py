@@ -282,13 +282,15 @@ def render_article(item: NewsItem, article_template: Template) -> str:
 
 def render_archive_card(item: NewsItem) -> str:
     return f"""        <article class="newsArchiveCard">
-          <a href="./{html.escape(item.slug, quote=True)}/">
+          <div class="newsCardCopy">
+            <p class="newsDate">{html.escape(item.published.strftime("%Y/%-m/%-d"))}</p>
+            <h2><a href="./{html.escape(item.slug, quote=True)}/">{html.escape(item.title)}</a></h2>
+            <p class="newsSummary">{html.escape(item.summary)}</p>
+            <a class="showMore" href="./{html.escape(item.slug, quote=True)}/"><span aria-hidden="true">›</span> Show More</a>
+          </div>
+          <a class="newsCardImage" href="./{html.escape(item.slug, quote=True)}/">
             <img src="./{html.escape(item.slug, quote=True)}/{html.escape(item.cover, quote=True)}" alt="{html.escape(item.title, quote=True)}" loading="lazy">
           </a>
-          <p class="newsDate">{html.escape(item.display_date)} · {html.escape(item.category)}</p>
-          <h2><a href="./{html.escape(item.slug, quote=True)}/">{html.escape(item.title)}</a></h2>
-          <p>{html.escape(item.summary)}</p>
-          <a class="textLink" href="./{html.escape(item.slug, quote=True)}/">Read article <span>→</span></a>
         </article>"""
 
 
@@ -297,9 +299,11 @@ def build(output_root: Path) -> list[NewsItem]:
         shutil.rmtree(output_root)
     output_root.mkdir(parents=True)
 
-    for filename in ("styles.css", "script.js", "README.md"):
+    for filename in ("styles.css", "script.js", "README.md", "CNAME"):
         shutil.copy2(PROJECT_ROOT / filename, output_root / filename)
     shutil.copytree(PROJECT_ROOT / "public", output_root / "public")
+    for directory in ("about", "business", "investors"):
+        shutil.copytree(PROJECT_ROOT / directory, output_root / directory)
 
     sources = sorted(
         path
