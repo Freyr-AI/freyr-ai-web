@@ -215,7 +215,12 @@ img { display: block; max-width: 100%; }
   font-weight: 400;
   letter-spacing: -.035em;
 }
-.presence img { width: min(100%, 1548px); margin: 0 auto; }
+.presence img {
+  width: min(100%, 1548px);
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
 .homeNews { padding-top: 25px; padding-bottom: 150px; }
 .homeNews > h2 {
   margin: 0 0 82px;
