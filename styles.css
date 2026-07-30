@@ -922,6 +922,13 @@ body.hasOpenDialog { overflow: hidden; }
   .businessIntro,
   .businessGallery { width: min(69.27vw, 1330px); }
   .businessGallery.isSecondPage { min-height: min(34.85vw, 669px); }
+  .aboutIntro,
+  .aboutOverview,
+  .alignment { width: min(69.27vw, 1330px); }
+  .complianceBand {
+    padding-right: max(5.2vw, calc((100vw - min(69.27vw, 1330px)) / 2));
+    padding-left: max(5.2vw, calc((100vw - min(69.27vw, 1330px)) / 2));
+  }
 }
 
 @media (min-width: 821px) and (max-width: 1180px) {
