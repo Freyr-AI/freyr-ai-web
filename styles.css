@@ -372,6 +372,7 @@ img { display: block; max-width: 100%; }
 .businessPage { padding-bottom: 88px; }
 .businessIntro { padding-top: 48px; }
 .businessIntro h1 { font-size: clamp(54px, 8vw, 150px); }
+.businessIntro .imageTitle { margin-bottom: 14px; }
 .businessIntro h2 { margin-top: 0; font-size: clamp(18px, 1.55vw, 29px); }
 .businessIntro p { max-width: 1270px; margin: 24px 0; font-size: clamp(16px, 1.18vw, 22px); line-height: 1.55; }
 .businessIntro p:last-child { margin-top: 42px; }
