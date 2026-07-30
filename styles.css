@@ -309,6 +309,8 @@ img { display: block; max-width: 100%; }
   letter-spacing: -.06em;
   line-height: .86;
 }
+.imageTitle { line-height: 0; }
+.imageTitle img { width: auto; max-width: 100%; height: auto; }
 .pageIntro > p,
 .pageIntro > h2 {
   margin: 14px 0 0;
@@ -658,6 +660,7 @@ body.hasOpenDialog { overflow: hidden; }
 
 .newsArchivePage { width: var(--page); margin: 0 auto; padding: 45px 0 120px; }
 .newsArchivePage > h1 { margin: 0; font-size: clamp(72px, 8vw, 150px); letter-spacing: -.06em; line-height: 1; }
+.newsArchivePage > .imageTitle { line-height: 0; }
 .newsArchivePage > .archiveTagline { margin: 0 0 85px; font-size: 18px; font-weight: 700; }
 .newsArchiveGrid { display: grid; }
 .newsArchiveCard {
