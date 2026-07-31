@@ -1,9 +1,9 @@
 /* Alimama Agile © Taobao (China) Software Co., Ltd.; see public/fonts/AlimamaAgileVF-LICENSE.txt. */
 @font-face {
   font-family: "Alimama Agile";
-  src: url("./public/fonts/AlimamaAgileVF-Thin.woff2") format("woff2");
+  src: url("./public/fonts/AlimamaAgileVF-Upright.woff2") format("woff2");
   font-style: normal;
-  font-weight: 100 900;
+  font-weight: 100 700;
   font-display: swap;
 }
 
@@ -25,11 +25,13 @@ body {
   font-family: "Alimama Agile", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: 300;
+  font-variation-settings: "slnt" 0;
   -webkit-font-smoothing: antialiased;
 }
 a { color: inherit; text-decoration: none; }
 button { color: inherit; font: inherit; font-weight: 400; }
 h1, h2, h3, strong, b { font-weight: 700; }
+em, i { font-variation-settings: "slnt" 12; }
 img { display: block; max-width: 100%; }
 .contentWidth { width: var(--page); margin-inline: auto; }
 
