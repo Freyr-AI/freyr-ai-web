@@ -71,7 +71,7 @@ if (newsList && previousButton && nextButton) {
 
     const meta = document.createElement("p");
     meta.className = "newsDate";
-    meta.textContent = `${item.display_date} · ${item.category}`;
+    meta.textContent = item.display_date;
 
     const heading = document.createElement("h3");
     heading.textContent = item.title;
