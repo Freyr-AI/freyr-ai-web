@@ -123,11 +123,19 @@ img { display: block; max-width: 100%; }
 .homeHero {
   position: relative;
   min-height: 669px;
-  background: #fff url("./public/design/home-hero.jpg") center bottom / cover no-repeat;
+  background-color: #fff;
+  background-image: url("./public/design/home-hero.jpg");
+  background-image: image-set(
+    url("./public/design/home-hero.webp") type("image/webp"),
+    url("./public/design/home-hero.jpg") type("image/jpeg")
+  );
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: auto max(100%, 34.84vw);
 }
 .homeHeroCopy {
-  width: min(100% - 104px, 1816px);
-  margin: 0 auto;
+  width: auto;
+  margin: 0 max(5.2vw, 32px);
   padding-top: 57px;
 }
 .heroPartner { width: 164px; height: 63px; margin-bottom: 40px; object-fit: contain; }
@@ -352,18 +360,22 @@ img { display: block; max-width: 100%; }
   display: grid;
   grid-template-columns: 558px 1fr;
   gap: 107px;
-  align-items: center;
+  align-items: start;
   padding-bottom: 150px;
 }
 .aboutOverview > img { width: 100%; height: auto; }
 .aboutOverview > div {
+  display: flex;
   width: min(100%, 27.2em);
+  align-self: stretch;
+  flex-direction: column;
   font-size: 19px;
 }
 .aboutOverview h2 { margin: 0 0 32px; font-size: clamp(48px, 4.2vw, 80px); line-height: 1; }
-.aboutOverview p { margin: 0 0 23px; font-size: 1em; line-height: 2.05; }
+.aboutOverview p { margin: 0 0 23px; font-size: 1em; line-height: 3.2; }
 .aboutOverview .letterline {
-  margin-top: 8px;
+  margin-top: auto;
+  margin-bottom: 0;
   padding-top: 2px;
   border-top: 2px solid #8490b3;
   color: #8490b3;
@@ -398,6 +410,7 @@ img { display: block; max-width: 100%; }
 .businessIntro h1 { font-size: clamp(54px, 8vw, 150px); }
 .businessIntro .pageTitleTagline { font-size: clamp(18px, 1.55vw, 29px); }
 .businessIntro p { max-width: 1270px; margin: 24px 0; font-size: clamp(16px, 1.18vw, 22px); line-height: 1.55; }
+.businessIntro > p { font-weight: 300; }
 .businessIntro p:last-child { margin-top: 42px; }
 .businessGallery {
   display: grid;
@@ -761,8 +774,8 @@ body.hasOpenDialog { overflow: hidden; }
 .footerColumn h2 { margin: 0 0 5px; font-size: 28px; }
 .footerColumn a { font-size: 18px; font-weight: 400; }
 .footerPartner { display: grid; justify-items: start; gap: 22px; }
-.footerPartnerBadge { width: 345px; height: auto; }
-.footerQr { width: 345px; height: auto; object-fit: contain; }
+.footerPartnerBadge { width: 280px; height: auto; }
+.footerQr { width: 280px; height: auto; object-fit: contain; }
 
 @media (min-width: 821px) and (max-width: 1600px) {
   :root { --page: min(100% - 5.42vw, 1330px); }
@@ -786,7 +799,6 @@ body.hasOpenDialog { overflow: hidden; }
   .businessSubnav a { padding: .57vw 1.15vw; font-size: clamp(13px, .78vw, 15px); }
   .homeHero { min-height: 34.84vw; }
   .homeHeroCopy {
-    width: calc(100% - 5.42vw);
     padding-top: 2.97vw;
   }
   .heroPartner {
@@ -852,6 +864,7 @@ body.hasOpenDialog { overflow: hidden; }
   .aboutOverview p {
     margin-bottom: 1.2vw;
     font-size: 1em;
+    line-height: 2.9;
   }
   .complianceBand {
     gap: 4.17vw;
@@ -927,8 +940,8 @@ body.hasOpenDialog { overflow: hidden; }
   .footerColumn h2 { font-size: clamp(21px, 1.46vw, 27px); }
   .footerColumn a { font-size: clamp(14px, .94vw, 17px); }
   .footerPartner { gap: 1.15vw; }
-  .footerPartnerBadge { width: 17.97vw; }
-  .footerQr { width: 17.97vw; height: auto; }
+  .footerPartnerBadge { width: 14.58vw; }
+  .footerQr { width: 14.58vw; height: auto; }
 }
 
 @media (min-width: 821px) {
@@ -1043,10 +1056,10 @@ body.hasOpenDialog { overflow: hidden; }
   .businessSubnav a { padding: 10px 0; text-align: left; }
   .homeHero {
     min-height: 660px;
-    background-position: 70% bottom;
+    background-position: calc(70vw - 103px) bottom;
     background-size: auto 100%;
   }
-  .homeHeroCopy { width: auto; padding: 47px 20px 0; }
+  .homeHeroCopy { width: auto; margin: 0; padding: 47px 20px 0; }
   .homeHero h1 { gap: 22px; font-size: clamp(32px, 8.3vw, 54px); }
   .homeHero h1 span { max-width: 620px; white-space: normal; }
   .stats { min-height: 0; grid-template-columns: 1fr; gap: 46px; padding: 62px 20px; }
@@ -1169,7 +1182,7 @@ body.hasOpenDialog { overflow: hidden; }
 }
 
 @media (max-width: 520px) {
-  .homeHero { min-height: 600px; background-position: 75% bottom; }
+  .homeHero { min-height: 600px; background-position: calc(75vw - 198px) bottom; }
   .pillButton { min-width: 145px; min-height: 45px; }
   .complianceBand { grid-template-columns: 1fr; }
   .alignment li { grid-template-columns: 64px 1fr; gap: 12px; }
